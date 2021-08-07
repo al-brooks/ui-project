@@ -5,7 +5,6 @@ const stickerCarousel = document.getElementById("stickerCarousel")
 const limitDisplay = 10
 
 const STICK_RANDOM_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-
 const GIF_RANDOM_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
 // Calling the function to fetch random stickers/gifs for the landing page
