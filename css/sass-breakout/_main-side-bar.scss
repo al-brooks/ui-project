@@ -1,0 +1,16 @@
+@import './mixins';
+
+#sideTab {
+  width: 25%;
+  height: 100%;
+  @include testBorder(white);
+
+  ul {
+    li {
+      a {
+        color: $primaryText;
+        text-decoration: none;
+      }
+    }
+  }
+}

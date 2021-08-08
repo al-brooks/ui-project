@@ -1,0 +1,17 @@
+@import './mixins';
+
+#mainContent {
+  height: 100%;
+  width: 80%;
+  @include testBorder(white);
+
+  #stickerCarousel {
+    @include testBorder(yellow);
+    height: 20%;
+  }
+
+  #gifFrame {
+    @include testBorder(green);
+    height: 80%;
+  }
+}
