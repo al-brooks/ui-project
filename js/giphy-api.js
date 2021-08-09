@@ -42,7 +42,16 @@ function unhover(image) {
 
 function displayEmbedUrl(image) {
     let embed_url = image.getAttribute("embed_url")
-    mainContent.innerHTML = `<iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`
+    mainContent.innerHTML = `<div id="parentDiv">
+        <header id="header">
+            <button id="backButton" onClick="window.location.reload();">Back</button>
+            <h2>Office Title</h2>
+        </header>
+        
+        <div id="iframeContainer">
+            <iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>
+    </div>`
 }
 
 

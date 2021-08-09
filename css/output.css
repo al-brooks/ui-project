@@ -67,6 +67,22 @@ header nav form input {
 #mainContent #gifFrame img {
   margin: 10px 0px 10px;
 }
+#mainContent #parentDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#mainContent #parentDiv #header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#mainContent #parentDiv #iframeContainer {
+  margin-top: 40px;
+  margin-right: 60%;
+}
 
 #sideTab {
   display: none;
