@@ -20,7 +20,8 @@ async function fetchGifData(GIF_URL) {
         let gifData = await response.json()
 
         let gifItems = gifData.data.map((item) => {
-            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" onmouseover="hover(this)" onmouseout="unhover(this) onmouseout="unhover(this)"/>`
+            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" 
+            embed_url="${item.embed_url}" onmouseover="hover(this)" onmouseout="unhover(this) onclick="displayEmbedUrl(this)"/>`
         })
         gifFrame.innerHTML = gifItems.join("")
     } catch (error) {
