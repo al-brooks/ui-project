@@ -5,7 +5,7 @@ async function fetchStickerData(STICK_URL) {
         let stickData = await response.json()
 
         let stickItems = stickData.data.map((item) => {
-            return `<img src="${item.images.downsized_still.url}" />`
+            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" onmouseover="hover(this)" onmouseout="unhover(this)"/>`
         })
         stickerCarousel.innerHTML = stickItems.join("")
     } catch (error) {
@@ -20,12 +20,24 @@ async function fetchGifData(GIF_URL) {
         let gifData = await response.json()
 
         let gifItems = gifData.data.map((item) => {
-            return `<img src="${item.images.downsized_still.url}" />`
+            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" onmouseover="hover(this)" onmouseout="unhover(this)"/>`
         })
         gifFrame.innerHTML = gifItems.join("")
     } catch (error) {
         console.log(error)
     }
+}
+
+function hover(image) {
+    let hover_url = image.getAttribute("hover_url")
+    console.log(hover_url)
+    image.setAttribute('src', `${hover_url}`)
+}
+
+function unhover(image) {
+    let unhover_url = image.getAttribute("unhover_url")
+    console.log(unhover_url)
+    image.setAttribute('src', `${unhover_url}`)
 }
 
 // Variables for HTML 
