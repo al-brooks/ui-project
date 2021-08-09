@@ -1,11 +1,12 @@
 // reset initial HTML - CSS rule + style main body
-
 @import './mixins';
-
 body {
-  margin: 0px;
-  background-color: $primaryBackground;
-  color: $primaryText;
-  @include flexCenter(column);
-  @include testBorder(white);
+    margin: 0px;
+    background-color: $primaryBackground;
+    color: $primaryText;
+    @include flexCenter(column);
+    @include testBorder(white);
+    img {
+        height: 50px;
+    }
 }

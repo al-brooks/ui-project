@@ -8,6 +8,9 @@ body {
   align-items: center;
   border: 2px solid white;
 }
+body img {
+  height: 50px;
+}
 
 header {
   height: 40px;
