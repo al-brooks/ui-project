@@ -1,10 +1,10 @@
 const gifButton = document.getElementById("gifButton")
 const stickerButton = document.getElementById("stickerButton")
 const allButton = document.getElementById("allButton")
-// const gifFrame = document.getElementById("gifFrame")
 
+
+// Gif button action only view gifs
 gifButton.onclick = function () {
-    console.log("test");
     if (gifFrame.style.display !== "none") {
         gifFrame.style.display = "none";
     } else {
@@ -14,10 +14,19 @@ gifButton.onclick = function () {
 
 // Sticker button action only view stickers 
 stickerButton.onclick = function () {
-    console.log("test");
-    if (gifFrame.style.display !== "none") {
-        gifFrame.style.display = "none";
+    if (stickerCarousel.style.display !== "none") {
+        stickerCarousel.style.display = "none";
     } else {
+        stickerCarousel.style.display = "flex";
+    }
+  };
+
+  // All button shows both stickers and gifs
+  allButton.onclick = function () {
+    if (gifFrame.style.display !== "flex") {
         gifFrame.style.display = "flex";
+    } 
+    if (stickerCarousel.style.display !== "flex") {
+        stickerCarousel.style.display = "flex";
     }
   };
