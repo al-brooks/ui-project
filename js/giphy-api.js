@@ -54,6 +54,10 @@ function displayEmbedUrl(image) {
     </div>`
 }
 
+function displayKeyword(stickUrl, gifUrl) {
+    fetchStickerData(stickUrl)
+    fetchGifData(gifUrl)
+}
 
 // Variables for HTML 
 const textboxButtonForm = document.getElementById("textButtonForm")
@@ -64,6 +68,10 @@ const stickerCarousel = document.getElementById("stickerCarousel")
 const gifButton = document.getElementById("gifButton");
 const stickerButton = document.getElementById("stickerButton");
 const allButton = document.getElementById("allButton");
+const trendingBtn = document.getElementById("trendingBtn")
+const happyBtn = document.getElementById("happyBtn")
+const funnyBtn = document.getElementById("funnyBtn")
+const AyeeeBtn = document.getElementById("AyeeeBtn")
 
 const limitDisplay = 10
 
@@ -89,4 +97,36 @@ textboxButtonForm.addEventListener("submit", function(e) {
     fetchStickerData(STICK_SEARCH_URL)
     fetchGifData(GIF_SEARCH_URL)
 
+})
+
+trendingBtn.addEventListener("click", function() {
+    const STICK_TREND_URL = `https://api.giphy.com/v1/stickers/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`
+
+    const GIF_TREND_URL = `https://api.giphy.com/v1/gifs/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`
+
+    displayKeyword(STICK_TREND_URL, GIF_TREND_URL)
+})
+
+happyBtn.addEventListener("click", function() {
+    const STICK_HAPPY_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+    const GIF_HAPPY_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+    displayKeyword(STICK_HAPPY_URL, GIF_HAPPY_URL)
+})
+
+funnyBtn.addEventListener("click", function() {
+    const STICK_FUNNY_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$funny&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+    const GIF_FUNNY_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$funny&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+    displayKeyword(STICK_FUNNY_URL, GIF_FUNNY_URL)
+})
+
+AyeeeBtn.addEventListener("click", function() {
+    const STICK_AYE_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$ayeee&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+    const GIF_AYE_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$ayeee&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+    displayKeyword(STICK_AYE_URL, GIF_AYE_URL)
 })
