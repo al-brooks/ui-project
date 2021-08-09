@@ -20,7 +20,7 @@ async function fetchGifData(GIF_URL) {
         let gifData = await response.json()
 
         let gifItems = gifData.data.map((item) => {
-            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" onmouseover="hover(this)" onmouseout="unhover(this)"/>`
+            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" onmouseover="hover(this)" embed_url="${item.embed_url}" onmouseout="unhover(this)" onclick="displayEmbedUrl(this)"/>`
         })
         gifFrame.innerHTML = gifItems.join("")
     } catch (error) {
@@ -40,20 +40,27 @@ function unhover(image) {
     image.setAttribute('src', `${unhover_url}`)
 }
 
+function displayEmbedUrl(image) {
+    let embed_url = image.getAttribute("embed_url")
+    mainContent.innerHTML = `<iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`
+}
+
+
 // Variables for HTML 
 const textboxButtonForm = document.getElementById("textButtonForm")
+const mainContent = document.getElementById("mainContent")
 const wordTextBox = document.getElementById("wordTextBox")
 const gifFrame = document.getElementById("gifFrame")
 const stickerCarousel = document.getElementById("stickerCarousel")
 const limitDisplay = 10
 
-const STICK_RANDOM_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-const GIF_RANDOM_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+const STICK_INIT_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+const GIF_INIT_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
 
 // Initial page load: Calling ASYNC functions to fetch random stickers/gifs for the landing page
-fetchStickerData(STICK_RANDOM_URL)
-fetchGifData(GIF_RANDOM_URL)
+fetchStickerData(STICK_INIT_URL)
+fetchGifData(GIF_INIT_URL)
 
 
 // When the user click the search button    - Eventlistener for <form> tag for validation
