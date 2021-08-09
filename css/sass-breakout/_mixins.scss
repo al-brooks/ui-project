@@ -3,9 +3,9 @@
   border: 2px solid $color;
 }
 
-@mixin flexCenter($direction) {
+@mixin flexBox($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
+  justify-content: $justify;
+  align-items: $align;
 }

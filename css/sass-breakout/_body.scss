@@ -1,12 +1,15 @@
 // reset initial HTML - CSS rule + style main body
 @import './mixins';
+
+// mobile layout
 body {
-    margin: 0px;
-    background-color: $primaryBackground;
-    color: $primaryText;
-    @include flexCenter(column);
-    @include testBorder(white);
-    img {
-        height: 50px;
-    }
+  margin: 0px;
+  background-color: $primaryBackground;
+  color: $primaryText;
+  @include flexBox(column, center, center);
+  @include testBorder(white);
 }
+
+// tablet layout
+// @media (min-width: 668px) {
+// }

@@ -1,8 +1,13 @@
 @import './mixins';
 
+// mobile layout
 #container {
-  @include flexCenter(row);
+  @include flexBox(row, center, center);
   height: 100vh;
   width: 100%;
-  @include testBorder(white);
+  @include testBorder(purple);
 }
+
+// tablet layout
+// @media (min-width: 668px) {
+// }

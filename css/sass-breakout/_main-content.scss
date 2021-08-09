@@ -1,17 +1,36 @@
 @import './mixins';
 
+// mobile layout
 #mainContent {
   height: 100%;
-  width: 80%;
+  width: 100%;
   @include testBorder(white);
+
+  #mobileCategoryBtns {
+    @include testBorder(red);
+    @include flexBox(row, space-evenly, center);
+    margin-bottom: 10px;
+  }
 
   #stickerCarousel {
     @include testBorder(yellow);
     height: 20%;
+    margin-bottom: 10px;
+    img {
+      height: 70px;
+    }
   }
 
   #gifFrame {
     @include testBorder(green);
+    @include flexBox(column, flex-start, center);
     height: 80%;
+    img {
+      margin: 10px 0px 10px;
+    }
   }
 }
+
+// tablet layout
+// @media (min-width: 668px) {
+// }

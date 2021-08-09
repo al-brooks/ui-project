@@ -1,9 +1,21 @@
 @import './mixins';
 
+// mobile layout
 header {
   height: 40px;
+  width: 100%;
+  margin-bottom: 10px;
   nav {
-    @include flexCenter(row);
-    @include testBorder(yellow);
+    @include flexBox(row, space-around, center);
+    @include testBorder(black);
+    form {
+      input {
+        margin-right: 10px;
+      }
+    }
   }
 }
+
+// tablet layout
+// @media (min-width: 668px) {
+// }

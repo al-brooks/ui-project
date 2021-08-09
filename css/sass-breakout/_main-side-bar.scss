@@ -1,15 +1,24 @@
 @import './mixins';
 
+// mobile layout
 #sideTab {
-  width: 25%;
-  height: 100%;
-  @include testBorder(white);
+  display: none;
+}
 
-  ul {
-    li {
-      a {
-        color: $primaryText;
-        text-decoration: none;
+// tablet layout
+@media (min-width: 668px) {
+  #sideTab {
+    display: block;
+    width: 25%;
+    height: 100%;
+    @include testBorder(white);
+
+    ul {
+      li {
+        a {
+          color: $primaryText;
+          text-decoration: none;
+        }
       }
     }
   }
