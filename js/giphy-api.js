@@ -33,6 +33,10 @@ const textboxButtonForm = document.getElementById("textButtonForm")
 const wordTextBox = document.getElementById("wordTextBox")
 const gifFrame = document.getElementById("gifFrame")
 const stickerCarousel = document.getElementById("stickerCarousel")
+const gifButton = document.getElementById("gifButton");
+const stickerButton = document.getElementById("stickerButton");
+const allButton = document.getElementById("allButton");
+
 const limitDisplay = 10
 
 const STICK_RANDOM_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
