@@ -5,7 +5,7 @@ async function fetchStickerData(STICK_URL) {
         let stickData = await response.json()
 
         let stickItems = stickData.data.map((item) => {
-            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" onmouseover="hover(this)" onmouseout="unhover(this)"/>`
+            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" embed_url="${item.embed_url}" onmouseover="hover(this)" onmouseout="unhover(this)" onclick="displayEmbedUrl(this)"/>`
         })
         stickerCarousel.innerHTML = stickItems.join("")
     } catch (error) {
