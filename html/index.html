@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- Sass - css output -->
+    <link rel="stylesheet" href="/ui-project/css/output.css" />
     <title>Gif Finder</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <!-- Display Logo / Textbox for keyword / Button for search -->
-        <nav>
-            <img src="#" alt="logo">
-            <form id="textButtonForm">
-                <input id="wordTextBox" type="textbox" placeholder="Enter keyword" required />
-                <button id="searchButton">Search</button>
-            </form>
-        </nav>
+      <!-- Display Logo / Textbox for keyword / Button for search -->
+      <nav>
+        <img src="#" alt="logo" />
+        <form id="textButtonForm">
+          <input
+            id="wordTextBox"
+            type="textbox"
+            placeholder="Enter keyword"
+            required
+          />
+          <button id="searchButton">Search</button>
+        </form>
+      </nav>
     </header>
 
     <main id="container">
-        <!-- Display side tabs  -->
-        <section id="sideTab">
-            <h1>Website Name</h1>
-            <h4>Website Description</h4>
-            <ul id="sideTabUL">
-                <li><a href="#">Side Tab 1</a></li>
-                <li><a href="#">Side Tab 2</a></li>
-                <li><a href="#">Side Tab 3</a></li>
-            </ul>
-        </section>
+      <!-- Display side tabs  -->
+      <section id="sideTab">
+        <h1>Website Name</h1>
+        <h4>Website Description</h4>
+        <ul id="sideTabUL">
+          <li><a href="#">Side Tab 1</a></li>
+          <li><a href="#">Side Tab 2</a></li>
+          <li><a href="#">Side Tab 3</a></li>
+        </ul>
+      </section>
 
-        <!-- Display Stickers / Gifs -->
-        <section id="mainContent">
-            <div id="stickerCarousel">
-                <!-- Bootstrap Required -->
-            </div>
-            <div id="gifFrame">
-
-            </div>
-        </section>
+      <!-- Display Stickers / Gifs -->
+      <section id="mainContent">
+        <div id="stickerCarousel">
+          <!-- Bootstrap Required -->
+          Sticker Carousel Here
+        </div>
+        <div id="gifFrame">Main Gifs Here</div>
+      </section>
     </main>
 
-    <script src="js/giphy-api.js">
-    </script>
-</body>
-
+    <!-- bootstrap script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="js/giphy-api.js"></script> -->
+  </body>
 </html>

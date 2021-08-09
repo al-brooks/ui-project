@@ -1,0 +1,9 @@
+@import './mixins';
+
+header {
+  height: 40px;
+  nav {
+    @include flexCenter(row);
+    @include testBorder(yellow);
+  }
+}

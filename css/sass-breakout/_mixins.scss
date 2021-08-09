@@ -1,0 +1,11 @@
+// test borders for box model
+@mixin testBorder($color) {
+  border: 2px solid $color;
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}

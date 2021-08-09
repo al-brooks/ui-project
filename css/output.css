@@ -1,3 +1,57 @@
+body {
+  margin: 0px;
+  background-color: #006494;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+}
 
+header {
+  height: 40px;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid yellow;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  border: 2px solid white;
+}
+
+#mainContent {
+  height: 100%;
+  width: 80%;
+  border: 2px solid white;
+}
+#mainContent #stickerCarousel {
+  border: 2px solid yellow;
+  height: 20%;
+}
+#mainContent #gifFrame {
+  border: 2px solid green;
+  height: 80%;
+}
+
+#sideTab {
+  width: 25%;
+  height: 100%;
+  border: 2px solid white;
+}
+#sideTab ul li a {
+  color: #fff;
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=output.css.map */
