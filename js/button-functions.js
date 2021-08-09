@@ -4,21 +4,16 @@ const allButton = document.getElementById("allButton")
 
 
 // Gif button action only view gifs
-stickerButton.onclick = function () {
-    if (gifFrame.style.display !== "none") {
-        gifFrame.style.display = "none";
-    } else {
-        gifFrame.style.display = "flex";
-    }
+gifButton.onclick = function () {
+   gifFrame.style.display = "flex";
+   stickerCarousel.style.display = "none"
+    
   };
 
 // Sticker button action only view stickers 
-gifButton.onclick = function () {
-    if (stickerCarousel.style.display !== "none") {
-        stickerCarousel.style.display = "none";
-    } else {
-        stickerCarousel.style.display = "flex";
-    }
+stickerButton.onclick = function () {
+    stickerCarousel.style.display = "flex"
+    gifFrame.style.display = "none";
   };
 
   // All button shows both stickers and gifs
