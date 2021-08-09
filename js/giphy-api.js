@@ -8,11 +8,12 @@ const STICK_RANDOM_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe
 const GIF_RANDOM_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
 // Calling the function to fetch random stickers/gifs for the landing page
-fetchApiData(STICK_RANDOM_URL, GIF_RANDOM_URL)
+fetchStickerData(STICK_RANDOM_URL)
+fetchGifData(GIF_RANDOM_URL)
 
 
-// ASYNC function for fetching searched Stickers / Gifs
-async function fetchApiData(STICK_URL, GIF_URL) {
+// ASYNC function for fetching searched Stickers
+async function fetchStickerData(STICK_URL) {
     // Fetching stickers
     try {
         let response = await fetch(STICK_URL)
@@ -25,7 +26,10 @@ async function fetchApiData(STICK_URL, GIF_URL) {
     } catch (error) {
         console.log(error)
     }
+}
 
+// ASYNC function for fetching searched Gifs
+async function fetchGifData(GIF_URL) {
     // Fetching gifs
     try {
         let response = await fetch(GIF_URL)
@@ -40,7 +44,6 @@ async function fetchApiData(STICK_URL, GIF_URL) {
     }
 }
 
-
 // When the user click the search button    - Eventlistener for <form> tag for validation
 textboxButtonForm.addEventListener("submit", function(e) {
     e.preventDefault()
@@ -52,5 +55,7 @@ textboxButtonForm.addEventListener("submit", function(e) {
     const GIF_SEARCH_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
     // Calling ASYNC function
-    fetchApiData(STICK_SEARCH_URL, GIF_SEARCH_URL)
+    fetchStickerData(STICK_SEARCH_URL)
+    fetchGifData(GIF_SEARCH_URL)
+
 })
