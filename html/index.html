@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <!-- Sass - css output -->
-    <link rel="stylesheet" href="/ui-project/css/output.css" />
+    <link rel="stylesheet" href="../css/output.css" />
     <title>Gif Finder</title>
   </head>
 
@@ -49,7 +49,7 @@
         <div id="mobileCategoryBtns">
           <button id="allButton">All</button>
           <button id="stickerButton">Sticker</button>
-          <button id="gifButton">Gif</button>
+          <button onclick="hideStickers()" id="gifButton">Gif</button>
         </div>
         <div id="stickerCarousel">
           <!-- Bootstrap Required -->
@@ -66,6 +66,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- JavaScript -->
-    <script src="/ui-project/js/giphy-api.js"></script>
+    <script src="../js/giphy-api.js"></script>
+    <script src="../js/button-functions.js"></script>
   </body>
 </html>
