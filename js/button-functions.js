@@ -4,7 +4,7 @@ const allButton = document.getElementById("allButton")
 
 
 // Gif button action only view gifs
-gifButton.onclick = function () {
+stickerButton.onclick = function () {
     if (gifFrame.style.display !== "none") {
         gifFrame.style.display = "none";
     } else {
@@ -13,7 +13,7 @@ gifButton.onclick = function () {
   };
 
 // Sticker button action only view stickers 
-stickerButton.onclick = function () {
+gifButton.onclick = function () {
     if (stickerCarousel.style.display !== "none") {
         stickerCarousel.style.display = "none";
     } else {
