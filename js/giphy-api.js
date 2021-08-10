@@ -123,7 +123,7 @@ funnyBtn.addEventListener("click", function() {
     displayKeyword(STICK_FUNNY_URL, GIF_FUNNY_URL)
 })
 
-AyeeeBtn.addEventListener("click", function() {
+ayeeeBtn.addEventListener("click", function() {
     const STICK_AYE_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$ayeee&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
     const GIF_AYE_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$ayeee&limit=${limitDisplay}&offset=0&rating=g&lang=en`
