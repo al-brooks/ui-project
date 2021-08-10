@@ -98,7 +98,7 @@ header nav form input {
   justify-content: flex-start;
   align-items: center;
   height: 260em;
-  background-color: #00304d;
+  background: linear-gradient(180deg, #00304d, #006494);
 }
 #mainContent #gifFrame img {
   margin: 10px 0px 10px;
@@ -136,6 +136,12 @@ header nav form input {
     height: 100%;
     border: 2px solid white;
     border-radius: 5px;
+  }
+  #sideTab h1 {
+    font-family: serif;
+  }
+  #sideTab h4 {
+    font-family: serif;
   }
   #sideTab ul {
     list-style: none;

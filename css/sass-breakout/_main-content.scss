@@ -3,6 +3,7 @@
 #mainContent {
   height: 100%;
   width: 100%;
+  
   // @include testBorder(white);
   #mobileCategoryBtns {
     // @include testBorder(red);
@@ -26,9 +27,10 @@
     // @include testBorder(green);
     @include flexBox(column, flex-start, center);
     height: 260em;
-    background-color: #00304d;
+    background: linear-gradient(180deg, #00304d, #006494);
     img {
       margin: 10px 0px 10px;
+      
     }
   }
   #parentDiv {
