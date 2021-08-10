@@ -20,7 +20,8 @@ async function fetchGifData(GIF_URL) {
         let gifData = await response.json()
 
         let gifItems = gifData.data.map((item) => {
-            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" embed_url="${item.embed_url}" onmouseover="hover(this)" onmouseout="unhover(this)" onclick="displayEmbedUrl(this)"/>`
+            return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" embed_url="${item.embed_url}"
+            title="${item.title}" onmouseover="hover(this)" onmouseout="unhover(this)" onclick="displayEmbedUrl(this)"/>`
         })
         gifFrame.innerHTML = gifItems.join("")
     } catch (error) {
@@ -28,69 +29,56 @@ async function fetchGifData(GIF_URL) {
     }
 }
 
+function resetAttributes() {
+    gifFrame.removeAttribute("style")
+    stickerCarousel.removeAttribute("style")
+    mobileCategoryBtns.removeAttribute("style")
+    embedUrlDisplay.style.display = "none"
+}
+
 function hover(image) {
     let hover_url = image.getAttribute("hover_url")
-    console.log(hover_url)
     image.setAttribute('src', `${hover_url}`)
 }
 
 function unhover(image) {
     let unhover_url = image.getAttribute("unhover_url")
-    console.log(unhover_url)
     image.setAttribute('src', `${unhover_url}`)
 }
 
 function displayEmbedUrl(image) {
+    if (embedUrlDisplay.style.display === "none") {
+        embedUrlDisplay.removeAttribute("style")
+    }
     let embed_url = image.getAttribute("embed_url")
-    mainContent.innerHTML = `<div id="parentDiv">
+    let title = image.getAttribute("title")
+    embedUrlDisplay.innerHTML = `<div id="parentDiv">
         <header id="header">
             <button id="backButton" onClick="window.location.reload();">Back</button>
-            <h2>Office Title</h2>
         </header>
         
         <div id="iframeContainer">
+        <h2>${title}</h2>
             <iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         </div>
-    </div>`
+    </div>`;
+    mobileCategoryBtns.style.display = "none"
+    stickerCarousel.style.display = "none"
+    gifFrame.style.display = "none"
 }
 
-function executeEventListener(buttonName) {
-    if (buttonName.innerText === 'Trending') {
-        const STICK_TREND_URL = `https://api.giphy.com/v1/stickers/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`;
-
-        const GIF_TREND_URL = `https://api.giphy.com/v1/gifs/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`;
-
-        buttonName.addEventListener("click", function() {
-            fetchStickerData(STICK_TREND_URL);
-            fetchGifData(GIF_TREND_URL);
-        });
-    } else {
-        let keyword = buttonName.innerText;
-
-        let stick_url = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`;
-
-        let gif_url = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`;
-
-        buttonName.addEventListener("click", function() {
-            fetchStickerData(stick_url)
-            fetchGifData(gif_url)
-        });
-    }
-}
 
 // Variables for HTML 
 const textboxButtonForm = document.getElementById("textButtonForm")
-const mainContent = document.getElementById("mainContent")
+const embedUrlDisplay = document.getElementById("embedUrlDisplay")
 const wordTextBox = document.getElementById("wordTextBox")
 const gifFrame = document.getElementById("gifFrame")
 const stickerCarousel = document.getElementById("stickerCarousel")
-const gifButton = document.getElementById("gifButton");
-const stickerButton = document.getElementById("stickerButton");
-const allButton = document.getElementById("allButton");
-const trendingBtn = document.getElementById("trendingBtn")
-const happyBtn = document.getElementById("happyBtn")
-const funnyBtn = document.getElementById("funnyBtn")
-const ayeeeBtn = document.getElementById("AyeeeBtn")
+const mobileCategoryBtns = document.getElementById("mobileCategoryBtns")
+const gifButton = document.getElementById("gifButton")
+const stickerButton = document.getElementById("stickerButton")
+const allButton = document.getElementById("allButton")
+const sideBtns = document.getElementsByClassName("sideBtns")
 
 const limitDisplay = 10
 
@@ -104,10 +92,33 @@ fetchGifData(GIF_INIT_URL)
 
 
 // Sidebar button calls
-executeEventListener(trendingBtn)
-executeEventListener(happyBtn)
-executeEventListener(funnyBtn)
-executeEventListener(ayeeeBtn)
+
+
+for (let i = 0; i < sideBtns.length; i++) {
+    if (sideBtns[i].innerText === 'Trending') {
+        sideBtns[i].addEventListener('click', function() {
+            const STICK_TREND_URL = `https://api.giphy.com/v1/stickers/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`
+
+            const GIF_TREND_URL = `https://api.giphy.com/v1/gifs/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`
+
+            resetAttributes()
+            fetchStickerData(STICK_TREND_URL)
+            fetchGifData(GIF_TREND_URL)
+        })
+    } else {
+        sideBtns[i].addEventListener('click', function() {
+            let keyword = sideBtns[i].innerText;
+
+            let stick_url = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+            let gif_url = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+
+            resetAttributes()
+            fetchStickerData(stick_url)
+            fetchGifData(gif_url)
+        })
+    }
+}
 
 
 // When the user click the search button    - Eventlistener for <form> tag for validation
@@ -120,6 +131,7 @@ textboxButtonForm.addEventListener("submit", function(e) {
     const GIF_SEARCH_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
     // Calling ASYNC functions
+    resetAttributes()
     fetchStickerData(STICK_SEARCH_URL)
     fetchGifData(GIF_SEARCH_URL)
 
