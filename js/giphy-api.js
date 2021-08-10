@@ -54,9 +54,28 @@ function displayEmbedUrl(image) {
     </div>`
 }
 
-function displayKeyword(stickUrl, gifUrl) {
-    fetchStickerData(stickUrl)
-    fetchGifData(gifUrl)
+function executeEventListener(buttonName) {
+    if (buttonName.innerText === 'Trending') {
+        const STICK_TREND_URL = `https://api.giphy.com/v1/stickers/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`;
+
+        const GIF_TREND_URL = `https://api.giphy.com/v1/gifs/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`;
+
+        buttonName.addEventListener("click", function() {
+            fetchStickerData(STICK_TREND_URL);
+            fetchGifData(GIF_TREND_URL);
+        });
+    } else {
+        let keyword = buttonName.innerText;
+
+        let stick_url = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`;
+
+        let gif_url = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$${keyword}&limit=${limitDisplay}&offset=0&rating=g&lang=en`;
+
+        buttonName.addEventListener("click", function() {
+            fetchStickerData(stick_url)
+            fetchGifData(gif_url)
+        });
+    }
 }
 
 // Variables for HTML 
@@ -84,6 +103,13 @@ fetchStickerData(STICK_INIT_URL)
 fetchGifData(GIF_INIT_URL)
 
 
+// Sidebar button calls
+executeEventListener(trendingBtn)
+executeEventListener(happyBtn)
+executeEventListener(funnyBtn)
+executeEventListener(ayeeeBtn)
+
+
 // When the user click the search button    - Eventlistener for <form> tag for validation
 textboxButtonForm.addEventListener("submit", function(e) {
     e.preventDefault()
@@ -97,36 +123,4 @@ textboxButtonForm.addEventListener("submit", function(e) {
     fetchStickerData(STICK_SEARCH_URL)
     fetchGifData(GIF_SEARCH_URL)
 
-})
-
-trendingBtn.addEventListener("click", function() {
-    const STICK_TREND_URL = `https://api.giphy.com/v1/stickers/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`
-
-    const GIF_TREND_URL = `https://api.giphy.com/v1/gifs/trending?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&limit=${limitDisplay}&rating=g`
-
-    displayKeyword(STICK_TREND_URL, GIF_TREND_URL)
-})
-
-happyBtn.addEventListener("click", function() {
-    const STICK_HAPPY_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-
-    const GIF_HAPPY_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$happy&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-
-    displayKeyword(STICK_HAPPY_URL, GIF_HAPPY_URL)
-})
-
-funnyBtn.addEventListener("click", function() {
-    const STICK_FUNNY_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$funny&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-
-    const GIF_FUNNY_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$funny&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-
-    displayKeyword(STICK_FUNNY_URL, GIF_FUNNY_URL)
-})
-
-ayeeeBtn.addEventListener("click", function() {
-    const STICK_AYE_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$ayeee&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-
-    const GIF_AYE_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$ayeee&limit=${limitDisplay}&offset=0&rating=g&lang=en`
-
-    displayKeyword(STICK_AYE_URL, GIF_AYE_URL)
 })
