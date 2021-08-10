@@ -73,9 +73,10 @@ const happyBtn = document.getElementById("happyBtn")
 const funnyBtn = document.getElementById("funnyBtn")
 const ayeeeBtn = document.getElementById("AyeeeBtn")
 
+const limitDisplaySticker = 8
 const limitDisplay = 10
 
-const STICK_INIT_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+const STICK_INIT_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplaySticker}&offset=0&rating=g&lang=en`
 const GIF_INIT_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
 

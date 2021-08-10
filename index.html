@@ -18,7 +18,9 @@
             <img src="#" alt="logo" />
             <form id="textButtonForm">
                 <input id="wordTextBox" type="textbox" placeholder="Enter keyword" required />
-                <button id="searchButton">Search</button>
+                <button id="searchButton" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg></button>
             </form>
         </nav>
     </header>
@@ -39,9 +41,9 @@
         <!-- Display Stickers / Gifs -->
         <section id="mainContent">
             <div id="mobileCategoryBtns">
-                <button id="allButton">All</button>
-                <button id="stickerButton">Sticker</button>
-                <button id="gifButton">Gif</button>
+                <button class="btn btn-info" id="allButton">All</button>
+                <button class="btn btn-info" id="stickerButton">Sticker</button>
+                <button class="btn btn-info" id="gifButton">Gif</button>
             </div>
             <div id="stickerCarousel">
                 <!-- Bootstrap Required -->

@@ -1,4 +1,4 @@
-@import './mixins';
+@import "./mixins";
 
 // mobile layout
 header {
@@ -7,13 +7,36 @@ header {
   margin-bottom: 10px;
   nav {
     @include flexBox(row, space-around, center);
-    @include testBorder(black);
+    padding-top: 8px;
+    
+    // @include testBorder(black);
     form {
+      button {
+        border: none;
+        margin-top: 5px;
+        height: 34px;
+      }
       input {
+        text-align: center;
+        border-style: none;
+        background-color: #00304d;
         margin-right: 10px;
+        border-radius: 16px;
+        width: 13em;
       }
     }
   }
+}
+
+
+  #searchButton {
+    background-color: #006494;
+    border-color: #006494;
+    margin-bottom: 13px;
+  }
+
+.bi bi-search{
+  background-size: 1rem 1rem;
 }
 
 // tablet layout
