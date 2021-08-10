@@ -1,0 +1,50 @@
+@import "./mixins";
+
+@media (min-width: 668px) {
+  #mainContent {
+    height: 100%;
+    width: 100%;
+
+    // @include testBorder(white);
+    #mobileCategoryBtns {
+      // @include testBorder(red);
+      @include flexBox(row, space-evenly, center);
+      margin-bottom: 14px;
+      margin-top: 10px;
+    }
+    #stickerCarousel {
+      // @include testBorder(yellow);
+      height: 20%;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      img {
+        height: 56px;
+        width: 82px;
+      }
+    }
+    #gifFrame {
+      // @include testBorder(green);
+      @include flexBox(column, flex-start, center);
+      height: 260em;
+      background: linear-gradient(180deg, #00304d, #006494);
+      img {
+        margin: 10px 0px 10px;
+        width: 500px
+      }
+    }
+    #parentDiv {
+      @include flexBox(column, center, center);
+      #header {
+        @include flexBox(row, center, center);
+      }
+      #iframeContainer {
+        margin-top: 40px;
+        margin-right: 60%;
+      }
+    }
+  }
+
+  // tablet layout
+}

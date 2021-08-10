@@ -53,7 +53,7 @@ header nav form input {
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: #00304d;
+  background-color: #006494;
   border-radius: 13px;
 }
 
@@ -129,13 +129,15 @@ header nav form input {
     display: block;
     width: 25%;
     height: 100%;
-    border: 2px solid white;
-    border-radius: 5px;
-    display: block;
+    /* border: 2px solid white; */
+    /* border-radius: 5px; */
+    display: flex;
     width: 25%;
     height: 100%;
-    border: 2px solid white;
-    border-radius: 5px;
+    /* border: 2px solid white; */
+    /* border-radius: 5px; */
+    background: #006494;
+    flex-direction: column;
   }
   #sideTab h1 {
     font-family: serif;
@@ -145,18 +147,72 @@ header nav form input {
   }
   #sideTab ul {
     list-style: none;
+    margin-right: 5px;
   }
   #sideTab ul li {
     text-align: center;
     border-radius: 5px;
   }
   #sideTab ul li button {
-    background-color: #006494;
+    background-color: #00304d;
     color: white;
   }
   #sideTab ul li a {
     color: #fff;
     text-decoration: none;
+  }
+}
+@media (min-width: 668px) {
+  #mainContent {
+    height: 100%;
+    width: 100%;
+  }
+  #mainContent #mobileCategoryBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 14px;
+    margin-top: 10px;
+  }
+  #mainContent #stickerCarousel {
+    height: 20%;
+    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #mainContent #stickerCarousel img {
+    height: 56px;
+    width: 82px;
+  }
+  #mainContent #gifFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 260em;
+    background: linear-gradient(180deg, #00304d, #006494);
+  }
+  #mainContent #gifFrame img {
+    margin: 10px 0px 10px;
+    width: 500px;
+  }
+  #mainContent #parentDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainContent #parentDiv #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainContent #parentDiv #iframeContainer {
+    margin-top: 40px;
+    margin-right: 60%;
   }
 }
 
