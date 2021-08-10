@@ -6,7 +6,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid white;
+  border: 3px solid #00304d;
 }
 
 header {
@@ -33,6 +33,7 @@ header nav form input {
   margin-right: 10px;
   border-radius: 16px;
   width: 13em;
+  color: white;
 }
 
 #searchButton {
@@ -52,7 +53,13 @@ header nav form input {
   align-items: center;
   height: 100vh;
   width: 100%;
-  border: 2px solid purple;
+}
+
+.btn-info {
+  color: #000;
+  background-color: #00304d;
+  border-color: #00304d;
+  color: white;
 }
 
 #mainContent {
@@ -69,7 +76,7 @@ header nav form input {
 }
 #mainContent #stickerCarousel {
   height: 20%;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -83,7 +90,8 @@ header nav form input {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 80%;
+  height: 260em;
+  background-color: #00304d;
 }
 #mainContent #gifFrame img {
   margin: 10px 0px 10px;

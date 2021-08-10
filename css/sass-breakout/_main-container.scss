@@ -5,7 +5,15 @@
   @include flexBox(row, center, center);
   height: 100vh;
   width: 100%;
-  @include testBorder(purple);
+  // @include testBorder(purple);
+}
+
+.btn-info {
+    color: #000;
+    background-color: #00304d;
+    border-color: #00304d;
+    color: white;
+  
 }
 
 // tablet layout
