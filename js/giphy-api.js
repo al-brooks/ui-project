@@ -71,7 +71,7 @@ const allButton = document.getElementById("allButton");
 const trendingBtn = document.getElementById("trendingBtn")
 const happyBtn = document.getElementById("happyBtn")
 const funnyBtn = document.getElementById("funnyBtn")
-const AyeeeBtn = document.getElementById("AyeeeBtn")
+const ayeeeBtn = document.getElementById("AyeeeBtn")
 
 const limitDisplay = 10
 
