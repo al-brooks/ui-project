@@ -92,8 +92,6 @@ fetchGifData(GIF_INIT_URL)
 
 
 // Sidebar button calls
-
-
 for (let i = 0; i < sideBtns.length; i++) {
     if (sideBtns[i].innerText === 'Trending') {
         sideBtns[i].addEventListener('click', function() {
@@ -134,5 +132,4 @@ textboxButtonForm.addEventListener("submit", function(e) {
     resetAttributes()
     fetchStickerData(STICK_SEARCH_URL)
     fetchGifData(GIF_SEARCH_URL)
-
 })
