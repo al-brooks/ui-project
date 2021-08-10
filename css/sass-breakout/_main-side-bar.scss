@@ -6,15 +6,32 @@
 }
 
 // tablet layout
-@media (min-width: 668px) {
+@media (min-width: 768px) {
   #sideTab {
     display: block;
     width: 25%;
     height: 100%;
-    @include testBorder(white);
+    // @include testBorder(white);
+    border:2px solid white;
+    border-radius: 5px;
+    
+      display: block;
+      width: 25%;
+      height: 100%;
+      border: 2px solid white;
+      border-radius: 5px;
+      
+    
 
     ul {
+      list-style: none;
       li {
+        text-align: center;
+        border-radius: 5px;
+        button {
+          background-color: #006494;
+          color: white;
+        }
         a {
           color: $primaryText;
           text-decoration: none;

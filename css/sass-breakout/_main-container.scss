@@ -5,6 +5,8 @@
   @include flexBox(row, center, center);
   height: 100vh;
   width: 100%;
+  background-color: #00304d;
+  border-radius: 13px;
   // @include testBorder(purple);
 }
 
@@ -17,5 +19,8 @@
 }
 
 // tablet layout
-// @media (min-width: 668px) {
-// }
+@media (min-width: 768px) {
+  body {
+    border: 15px solid #006494;
+  }
+}

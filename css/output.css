@@ -53,6 +53,8 @@ header nav form input {
   align-items: center;
   height: 100vh;
   width: 100%;
+  background-color: #00304d;
+  border-radius: 13px;
 }
 
 .btn-info {
@@ -62,6 +64,11 @@ header nav form input {
   color: white;
 }
 
+@media (min-width: 768px) {
+  body {
+    border: 15px solid #006494;
+  }
+}
 #mainContent {
   height: 100%;
   width: 100%;
@@ -117,12 +124,29 @@ header nav form input {
   display: none;
 }
 
-@media (min-width: 668px) {
+@media (min-width: 768px) {
   #sideTab {
     display: block;
     width: 25%;
     height: 100%;
     border: 2px solid white;
+    border-radius: 5px;
+    display: block;
+    width: 25%;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 5px;
+  }
+  #sideTab ul {
+    list-style: none;
+  }
+  #sideTab ul li {
+    text-align: center;
+    border-radius: 5px;
+  }
+  #sideTab ul li button {
+    background-color: #006494;
+    color: white;
   }
   #sideTab ul li a {
     color: #fff;
