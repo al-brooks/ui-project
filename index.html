@@ -50,15 +50,15 @@
             class="logged-out auth-trigger"
             data-target="auth-login"
           >
-            Login
+            <a href="/ui-project/pages/user-auth.html">Login/Signup</a>
           </button>
-          <button
+          <!-- <button
             type="button"
             class="logged-out auth-trigger"
             data-target="auth-signup"
           >
             Sign up
-          </button>
+          </button> -->
         </section>
       </nav>
     </header>
@@ -113,7 +113,7 @@
     <!-- Firebase JS Script -->
     <script>
       // Your web app's Firebase configuration
-      var firebaseConfig = {
+      const firebaseConfig = {
         apiKey: 'AIzaSyBFzG0ng9OyjjcHVC35r4Lwe8wkQ8foIX0',
         authDomain: 'ui-gif-project.firebaseapp.com',
         projectId: 'ui-gif-project',
@@ -123,8 +123,8 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      var db = firebase.firestore();
-      db.settings({ timestampsInSnapshots: true });
+      const dataBase = firebase.firestore();
+      dataBase.settings({ timestampsInSnapshots: true });
     </script>
     <!-- bootstrap script -->
     <script
