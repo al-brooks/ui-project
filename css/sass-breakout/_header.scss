@@ -29,7 +29,16 @@ header {
   }
 }
 
-
+#logoImage {
+	height: 135px;
+	width: 120px;
+	margin-top: -25px;
+	margin-bottom: 33px;
+	border-radius: 15px;
+}
+#description {
+  text-align: center;
+}
   #searchButton {
     background-color: $primaryBackground;
     border-color: $primaryBackground;

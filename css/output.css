@@ -35,6 +35,18 @@ header nav form input {
   color: #fff;
 }
 
+#logoImage {
+  height: 135px;
+  width: 120px;
+  margin-top: -25px;
+  margin-bottom: 33px;
+  border-radius: 15px;
+}
+
+#description {
+  text-align: center;
+}
+
 #searchButton {
   background-color: #006494;
   border-color: #006494;
@@ -125,18 +137,12 @@ header nav form input {
 
 @media (min-width: 768px) {
   #sideTab {
-    display: block;
-    width: 25%;
-    height: 100%;
-    /* border: 2px solid white; */
-    /* border-radius: 5px; */
     display: flex;
     width: 25%;
     height: 100%;
-    /* border: 2px solid white; */
-    /* border-radius: 5px; */
     background: #006494;
     flex-direction: column;
+    align-items: center;
   }
   #sideTab h1 {
     font-family: serif;
@@ -147,14 +153,18 @@ header nav form input {
   #sideTab ul {
     list-style: none;
     margin-right: 5px;
+    padding-top: 25px;
   }
   #sideTab ul li {
     text-align: center;
     border-radius: 5px;
+    margin: 0.2em;
   }
   #sideTab ul li button {
     background-color: #006494;
     color: #fff;
+    width: 115px;
+    margin-right: 23px;
   }
   #sideTab ul li a {
     color: #fff;

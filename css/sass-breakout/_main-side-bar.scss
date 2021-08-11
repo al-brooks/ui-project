@@ -1,4 +1,4 @@
-@import './mixins';
+@import "./mixins";
 
 // mobile layout
 #sideTab {
@@ -7,38 +7,34 @@
 
 // tablet layout
 @media (min-width: 768px) {
-  
-      #sideTab {
-        display: block;
-        width: 25%;
-        height: 100%;
-        /* border: 2px solid white; */
-        /* border-radius: 5px; */
-        display: flex;
-        width: 25%;
-        height: 100%;
-        /* border: 2px solid white; */
-        /* border-radius: 5px; */
-        background: $primaryBackground;
-        flex-direction: column;
-      
-    h1{
-      font-family: serif;
+  #sideTab {
+    display: flex;
+    width: 25%;
+    height: 100%;
+    background: $primaryBackground;
+    flex-direction: column;
+    align-items: center;
 
+    h1 {
+      font-family: serif;
     }
-    h4{
+    h4 {
       font-family: serif;
     }
 
     ul {
       list-style: none;
       margin-right: 5px;
+      padding-top: 25px;
       li {
         text-align: center;
         border-radius: 5px;
+        margin: 0.2em;
         button {
           background-color: $primaryBackground;
           color: $primaryText;
+          width: 115px;
+          margin-right: 23px;
         }
         a {
           color: $primaryText;
