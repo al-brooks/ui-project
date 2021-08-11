@@ -46,14 +46,6 @@ function unhover(image) {
   image.setAttribute('src', `${unhover_url}`);
 }
 
-// function addLikeToDb() {
-//   const form = document.querySelector('#likeBtn');
-//   form.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     dataBase.collection('Gifs').add({ title: title, embed_url: embed_url });
-//   });
-// }
-
 function displayEmbedUrl(image) {
   if (embedUrlDisplay.style.display === 'none') {
     embedUrlDisplay.removeAttribute('style');
@@ -68,21 +60,22 @@ function displayEmbedUrl(image) {
         
         <div id="iframeContainer">
         <h2>${title}</h2>
-        <form id="likeBtn">
-            <input type="text" name="${title}" />
-            <input type="text" name="${embed_url}" />
-            <button>Like</button>
-        </form>
+        <button id="likeBtn">Like</button>
         <div id="likeCounter">1</div>
             <iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         </div>
     </div>`;
 
+  // <form id="likeBtn">
+  //         <input type="text" name="${title}" />
+  //         <input type="text" name="${embed_url}" />
+  //         <button>Like</button>
+  //     </form>
   let likeCounter = document.querySelector('#likeCounter');
   displayLikes(image, likeCounter);
-  const form = document.querySelector('#likeBtn');
-  form.addEventListener('click', (event) => {
-    event.preventDefault();
+  const likeBtn = document.querySelector('#likeBtn');
+  likeBtn.addEventListener('click', (event) => {
+    // event.preventDefault();
     let likeCounter = document.querySelector('#likeCounter');
     likeGif(image);
     displayLikes(image, likeCounter);
@@ -129,13 +122,9 @@ async function displayLikes(image, element) {
   console.log(doc);
 
   if (doc.exists) {
-    if (doc.data().likes === 1) {
-      element.innerHTML = 1;
-    } else {
-      docRef.onSnapshot((doc) => {
-        element.innerHTML = doc.data().likes;
-      });
-    }
+    docRef.onSnapshot((doc) => {
+      element.innerHTML = doc.data().likes;
+    });
     console.log(`Document exists. Like Count is: ${doc.data().likes}`);
   } else {
     console.log('Document does not exist: Like Count is 0');
