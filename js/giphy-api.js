@@ -66,16 +66,10 @@ function displayEmbedUrl(image) {
         </div>
     </div>`;
 
-  // <form id="likeBtn">
-  //         <input type="text" name="${title}" />
-  //         <input type="text" name="${embed_url}" />
-  //         <button>Like</button>
-  //     </form>
   let likeCounter = document.querySelector('#likeCounter');
   displayLikes(image, likeCounter);
   const likeBtn = document.querySelector('#likeBtn');
   likeBtn.addEventListener('click', (event) => {
-    // event.preventDefault();
     let likeCounter = document.querySelector('#likeCounter');
     likeGif(image);
     displayLikes(image, likeCounter);

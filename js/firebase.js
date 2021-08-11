@@ -7,14 +7,6 @@
 
 const gifList = document.querySelector('#gifList');
 
-// function addLikeToDb() {
-//   const form = document.querySelector('#likeBtn');
-//   form.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     dataBase.collection('Gifs').add({ title: title, embed_url: embed_url });
-//   });
-// }
-
 function displayGifs(data) {
   data.forEach((doc) => {
     const gif = doc.data();
