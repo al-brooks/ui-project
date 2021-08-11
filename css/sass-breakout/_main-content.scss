@@ -3,6 +3,7 @@
 #mainContent {
     height: 100%;
     width: 100%;
+    background-color: $primaryDarkBlue;
     // @include testBorder(white);
     #mobileCategoryBtns {
         // @include testBorder(red);
@@ -10,33 +11,32 @@
         margin-bottom: 14px;
         margin-top: 10px;
     }
-}
-
-#gifFrame {
-    // @include testBorder(green);
-    @include flexBox(column, flex-start, center);
-    height: 260em;
-    background: linear-gradient(180deg, $primaryDarkBlue, $primaryBackground);
-    img {
-        margin: 10px 0px 10px;
-    }
     #gifFrame {
         // @include testBorder(green);
         @include flexBox(column, flex-start, center);
         height: 260em;
-        background: linear-gradient(180deg, #00304d, #006494);
+        background: linear-gradient(180deg, $primaryDarkBlue, $primaryBackground);
         img {
             margin: 10px 0px 10px;
         }
-    }
-    #parentDiv {
-        @include flexBox(column, center, center);
-        #header {
-            @include flexBox(row, center, center);
+        #gifFrame {
+            // @include testBorder(green);
+            @include flexBox(column, flex-start, center);
+            height: 260em;
+            background: linear-gradient(180deg, #00304d, #006494);
+            img {
+                margin: 10px 0px 10px;
+            }
         }
-        #iframeContainer {
-            margin-top: 40px;
-            margin-right: 60%;
+        #parentDiv {
+            @include flexBox(column, center, center);
+            #header {
+                @include flexBox(row, center, center);
+            }
+            #iframeContainer {
+                margin-top: 40px;
+                margin-right: 60%;
+            }
         }
     }
 }

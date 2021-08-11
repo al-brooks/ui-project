@@ -5,8 +5,7 @@
         width: 100%;
         #mobileCategoryBtns {
             @include flexBox(row, space-evenly, center);
-            margin-bottom: 14px;
-            margin-top: 10px;
+            margin: 15px 0;
         }
         #stickerCarousel {
             height: auto;
@@ -40,5 +39,4 @@
             }
         }
     }
-    // tablet layout
 }
