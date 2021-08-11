@@ -36,30 +36,13 @@
         </form>
         <!-- User Authentication for Firebase -->
         <section id="logInOptions">
-          <button
-            type="button"
-            class="logged-in auth-trigger"
-            data-target="auth-account"
-          >
-            Account
-          </button>
-          <button id="logout" type="button" class="logged-in auth-trigger">
-            Logout
-          </button>
-          <button
-            type="button"
-            class="logged-out auth-trigger"
-            data-target="auth-login"
-          >
-            <a href="/ui-project/pages/user-auth.html">Login/Signup</a>
-          </button>
-          <!-- <button
-            type="button"
-            class="logged-out auth-trigger"
-            data-target="auth-signup"
-          >
-            Sign up
-          </button> -->
+          <span id="userEmail"></span>
+          <input type="email" name="" id="email" placeholder="email" />
+          <input type="password" name="" id="password" placeholder="password" />
+          <button id="signUp">Sign Up</button>
+          <button id="signIn">Sign In</button>
+          <button type="button" id="userAccount">Account</button>
+          <button id="signOut" type="button">Logout</button>
         </section>
       </nav>
     </header>
@@ -117,7 +100,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- JavaScript -->
-    <script src="js/firebase.js"></script>
+    <script src="js/user-auth.js"></script>
     <script src="js/giphy-api.js"></script>
     <script src="js/button-functions.js"></script>
   </body>

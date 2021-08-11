@@ -60,6 +60,7 @@ function displayEmbedUrl(image) {
         
         <div id="iframeContainer">
         <h2>${title}</h2>
+        <span>Log in to like</span>
         <button id="likeBtn">Like</button>
         <div id="likeCounter">1</div>
             <iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
