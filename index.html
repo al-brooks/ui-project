@@ -33,22 +33,53 @@
           />
           <button id="searchButton">Search</button>
         </form>
-        <ul id="logInOptions">
-          <li class="logged-in">
-            <a href="#" data-target="account">Account</a>
-          </li>
-          <li class="logged-in">
-            <a href="#" id="logout">Logout</a>
-          </li>
-          <li class="logged-out">
-            <a href="#" data-target="login">Login</a>
-          </li>
-          <li class="logged-out">
-            <a href="#" data-target="signup">Sign up</a>
-          </li>
-        </ul>
+        <!-- User Authentication for Firebase -->
+        <section id="logInOptions">
+          <button
+            type="button"
+            class="logged-in auth-trigger"
+            data-target="auth-account"
+          >
+            Account
+          </button>
+          <button id="logout" type="button" class="logged-in auth-trigger">
+            Logout
+          </button>
+          <button
+            type="button"
+            class="logged-out auth-trigger"
+            data-target="auth-login"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="logged-out auth-trigger"
+            data-target="auth-signup"
+          >
+            Sign up
+          </button>
+        </section>
       </nav>
     </header>
+
+    <!-- Sign up section Add to new html doc-->
+    <section id="auth-signup" class="auth">
+      <div class="content">
+        <h4 class="title">Sign Up</h4>
+        <form id="signup-form">
+          <div class="input-field">
+            <input type="email" name="" id="signup-email" required />
+            <label for="signup-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" name="" id="signup-password" required />
+            <label for="signup-password">Choose password</label>
+          </div>
+          <button>Sign up</button>
+        </form>
+      </div>
+    </section>
 
     <main id="container">
       <!-- Display side tabs  -->
