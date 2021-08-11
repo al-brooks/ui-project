@@ -78,31 +78,70 @@ function displayEmbedUrl(image) {
         </div>
     </div>`;
 
+  let likeCounter = document.querySelector('#likeCounter');
+  displayLikes(image, likeCounter);
   const form = document.querySelector('#likeBtn');
   form.addEventListener('click', (event) => {
-    likes++;
     event.preventDefault();
-    dataBase
-      .collection('Gifs')
-      .doc(title)
-      .set({ title: title, embed_url: embed_url, likes: likes })
-      .then(() => {
-        console.log(`Document was successfully written with ID: ${title}`);
-        gifRefs.push(title);
-      });
+    let likeCounter = document.querySelector('#likeCounter');
+    likeGif(image);
+    displayLikes(image, likeCounter);
   });
 
   // to-do:  onclick function for like button: onClick="addLikeToDb();"
   mobileCategoryBtns.style.display = 'none';
   stickerCarousel.style.display = 'none';
   gifFrame.style.display = 'none';
-
-  return likes;
 }
 
-// database gif ref #s - passes :
-const gifRefs = [];
-let likes = 0;
+async function likeGif(image) {
+  let embed_url = image.getAttribute('embed_url');
+  let title = image.getAttribute('title');
+  const docRef = dataBase.collection('Gifs').doc(title);
+  const doc = await docRef.get();
+  console.log(doc);
+
+  if (doc.exists) {
+    console.log('Document exists: Added Like');
+    docRef.update({
+      likes: firebase.firestore.FieldValue.increment(1)
+    });
+  } else {
+    let likes = 1;
+
+    console.log('Document does not exist: Creating new document');
+    // if document doesn't exist (set)
+    dataBase
+      .collection('Gifs')
+      .doc(title)
+      .set({ title: title, embed_url: embed_url, likes: likes })
+      .then(() => {
+        console.log(`Document was successfully written with ID: ${title}`);
+      });
+  }
+}
+
+async function displayLikes(image, element) {
+  let embed_url = image.getAttribute('embed_url');
+  let title = image.getAttribute('title');
+  const docRef = dataBase.collection('Gifs').doc(title);
+  const doc = await docRef.get();
+  console.log(doc);
+
+  if (doc.exists) {
+    if (doc.data().likes === 1) {
+      element.innerHTML = 1;
+    } else {
+      docRef.onSnapshot((doc) => {
+        element.innerHTML = doc.data().likes;
+      });
+    }
+    console.log(`Document exists. Like Count is: ${doc.data().likes}`);
+  } else {
+    console.log('Document does not exist: Like Count is 0');
+    element.innerHTML = 0;
+  }
+}
 
 // Variables for HTML
 const textboxButtonForm = document.getElementById('textButtonForm');
