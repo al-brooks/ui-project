@@ -119,6 +119,18 @@ header nav form input {
   margin-right: 60%;
 }
 
+@media (min-width: 668px) {
+  #stickerCarousel img {
+    height: 100px;
+    width: 100px;
+  }
+}
+@media (min-width: 992px) {
+  #stickerCarousel img {
+    height: 200px;
+    width: 200px;
+  }
+}
 #sideTab {
   display: none;
 }
