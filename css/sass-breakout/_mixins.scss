@@ -1,11 +1,16 @@
 // test borders for box model
 @mixin testBorder($color) {
-  border: 2px solid $color;
+    border: 2px solid $color;
 }
 
 @mixin flexBox($direction, $justify, $align) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin grid($col) {
+    display: grid;
+    grid-template-columns: $col;
 }
