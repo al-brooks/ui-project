@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mobile-css branch -->
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +16,8 @@
     <header>
         <!-- Display Logo / Textbox for keyword / Button for search -->
         <nav>
-            <img src="#" alt="logo" />
+            <img id="logoImage" src="./css/sass-breakout/images/logo.png" />
+
             <form id="textButtonForm">
                 <input id="wordTextBox" type="textbox" placeholder="Enter keyword" required />
                 <button id="searchButton" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -28,7 +30,7 @@
     <main id="container">
         <!-- Display side tabs  -->
         <section id="sideTab">
-            <img id="logoImage" src="./css/sass-breakout/images/logo.png" alt="">
+            <h2><span>GIF</span>factory</h2>
             <p id="description">The simplest way to explore and share free animated Gifs and Stickers across all of your favorite social medias!</p>
             <div class="btn-group" role="group" aria-label="Basic outlined example" id="mobileCategoryBtns"></div>
             <ul id="sideTabUL">
@@ -55,14 +57,13 @@
                 <li><button class="sideBtns btn btn-info" id="trendingBtn">Science</button></li>
                 <li><button class="sideBtns btn btn-info" id="trendingBtn">Sports</button></li>
                 <li><button class="sideBtns btn btn-info" id="trendingBtn">TV</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Wierd</button></li>           
-             </ul>
-        </div>
+                <li><button class="sideBtns btn btn-info" id="trendingBtn">Wierd</button></li>
+            </ul>
         </section>
 
         <!-- Display Stickers / Gifs -->
         <section id="mainContent">
-            
+
             <div id="embedUrlDisplay">
 
             </div>

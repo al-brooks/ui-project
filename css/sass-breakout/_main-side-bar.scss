@@ -1,46 +1,50 @@
 @import "./mixins";
-
 // mobile layout
 #sideTab {
-  display: none;
+    display: none;
 }
 
 // tablet layout
 @media (min-width: 768px) {
-  #sideTab {
-    display: flex;
-    width: 25%;
-    height: 100%;
-    background: $primaryBackground;
-    flex-direction: column;
-    align-items: center;
-
-    h1 {
-      font-family: serif;
-    }
-    h4 {
-      font-family: serif;
-    }
-
-    ul {
-      list-style: none;
-      margin-right: 5px;
-      padding-top: 25px;
-      li {
-        text-align: center;
-        border-radius: 5px;
-        margin: 0.2em;
-        button {
-          background-color: $primaryBackground;
-          color: $primaryText;
-          width: 115px;
-          margin-right: 23px;
+    #sideTab {
+        display: flex;
+        width: 25%;
+        height: 100%;
+        background: $primaryDarkBlue;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        h2 {
+            margin: 50px 20px;
+            color: #52c1e6;
+            span {
+                color: white;
+            }
         }
-        a {
-          color: $primaryText;
-          text-decoration: none;
+        p {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 100px;
         }
-      }
+        ul {
+            list-style: none;
+            margin-right: 5px;
+            padding-top: 25px;
+            li {
+                text-align: center;
+                border-radius: 5px;
+                margin: 0.2em;
+                button {
+                    background-color: $primaryBackground;
+                    color: $primaryText;
+                    width: 115px;
+                    margin-right: 23px;
+                }
+                a {
+                    color: $primaryText;
+                    text-decoration: none;
+                }
+            }
+        }
     }
-  }
 }
