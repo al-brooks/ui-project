@@ -5,22 +5,22 @@
   @include flexBox(row, center, center);
   height: 100vh;
   width: 100%;
-  background-color: #006494;
+  background-color: $primaryBackground;
   border-radius: 13px;
   // @include testBorder(purple);
 }
 
 .btn-info {
     color: #000;
-    background-color: #00304d;
-    border-color: #00304d;
-    color: white;
+    background-color: $primaryDarkBlue;
+    border-color: $primaryDarkBlue;
+    color: $primaryText;
   
 }
 
 // tablet layout
 @media (min-width: 768px) {
   body {
-    border: 15px solid #006494;
+    border: 15px solid $primaryBackground;
   }
 }

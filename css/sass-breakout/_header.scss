@@ -19,11 +19,11 @@ header {
       input {
         text-align: center;
         border-style: none;
-        background-color: #00304d;
+        background-color: $primaryDarkBlue;
         margin-right: 10px;
         border-radius: 16px;
         width: 13em;
-        color: white
+        color: $primaryText
       }
     }
   }
@@ -31,8 +31,8 @@ header {
 
 
   #searchButton {
-    background-color: #006494;
-    border-color: #006494;
+    background-color: $primaryBackground;
+    border-color: $primaryBackground;
     margin-bottom: 13px;
   }
 

@@ -32,7 +32,7 @@ header nav form input {
   margin-right: 10px;
   border-radius: 16px;
   width: 13em;
-  color: white;
+  color: #fff;
 }
 
 #searchButton {
@@ -60,7 +60,7 @@ header nav form input {
   color: #000;
   background-color: #00304d;
   border-color: #00304d;
-  color: white;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -153,8 +153,8 @@ header nav form input {
     border-radius: 5px;
   }
   #sideTab ul li button {
-    background-color: #00304d;
-    color: white;
+    background-color: #006494;
+    color: #fff;
   }
   #sideTab ul li a {
     color: #fff;

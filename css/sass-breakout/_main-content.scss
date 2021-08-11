@@ -27,7 +27,7 @@
     // @include testBorder(green);
     @include flexBox(column, flex-start, center);
     height: 260em;
-    background: linear-gradient(180deg, #00304d, #006494);
+    background: linear-gradient(180deg, $primaryDarkBlue, $primaryBackground);
     img {
       margin: 10px 0px 10px;
       

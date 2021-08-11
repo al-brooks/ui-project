@@ -19,7 +19,7 @@
         height: 100%;
         /* border: 2px solid white; */
         /* border-radius: 5px; */
-        background: #006494;
+        background: $primaryBackground;
         flex-direction: column;
       
     h1{
@@ -37,8 +37,8 @@
         text-align: center;
         border-radius: 5px;
         button {
-          background-color: #00304d;
-          color: white;
+          background-color: $primaryBackground;
+          color: $primaryText;
         }
         a {
           color: $primaryText;
