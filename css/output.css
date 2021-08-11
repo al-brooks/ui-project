@@ -92,18 +92,8 @@ header nav form input {
   margin-bottom: 14px;
   margin-top: 10px;
 }
-#mainContent #stickerCarousel {
-  height: 20%;
-  margin-bottom: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#mainContent #stickerCarousel img {
-  height: 56px;
-  width: 82px;
-}
-#mainContent #gifFrame {
+
+#gifFrame {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,22 +101,33 @@ header nav form input {
   height: 260em;
   background: linear-gradient(180deg, #00304d, #006494);
 }
-#mainContent #gifFrame img {
+#gifFrame img {
   margin: 10px 0px 10px;
 }
-#mainContent #parentDiv {
+#gifFrame #gifFrame {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 260em;
+  background: linear-gradient(180deg, #00304d, #006494);
+}
+#gifFrame #gifFrame img {
+  margin: 10px 0px 10px;
+}
+#gifFrame #parentDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#mainContent #parentDiv #header {
+#gifFrame #parentDiv #header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-#mainContent #parentDiv #iframeContainer {
+#gifFrame #parentDiv #iframeContainer {
   margin-top: 40px;
   margin-right: 60%;
 }
@@ -206,6 +207,63 @@ header nav form input {
   #mainContent #gifFrame img {
     margin: 10px 0px 10px;
     width: 500px;
+  }
+  #mainContent #parentDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainContent #parentDiv #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainContent #parentDiv #iframeContainer {
+    margin-top: 40px;
+    margin-right: 60%;
+  }
+}
+@media (min-width: 992px) {
+  #mainContent {
+    height: 100%;
+    width: 100%;
+  }
+  #mainContent #mobileCategoryBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 14px;
+    margin-top: 10px;
+  }
+  #mainContent #stickerCarousel {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px 20px;
+  }
+  #mainContent #stickerCarousel img {
+    width: 180px;
+    height: 150px;
+  }
+  #mainContent #gifFrame {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, #00304d, #006494);
+  }
+  #mainContent #gifFrame img {
+    width: 480px;
+    height: 300px;
+    margin: 10px 0;
   }
   #mainContent #parentDiv {
     display: flex;
