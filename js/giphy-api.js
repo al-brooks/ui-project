@@ -21,7 +21,7 @@ async function fetchGifData(GIF_URL) {
 
     let gifItems = gifData.data.map((item) => {
       return `<img src="${item.images.downsized_still.url}" hover_url="${item.images.downsized_medium.url}" unhover_url="${item.images.downsized_still.url}" embed_url="${item.embed_url}"
-            title="${item.title}" onmouseover="hover(this)" onmouseout="unhover(this)" onclick="displayEmbedUrl(this)"/>`;
+            title="${item.title}" id="${item.id}" onmouseover="hover(this)" onmouseout="unhover(this)" onclick="displayEmbedUrl(this)"/>`;
     });
     gifFrame.innerHTML = gifItems.join('');
   } catch (error) {
@@ -60,9 +60,8 @@ function displayEmbedUrl(image) {
         
         <div id="iframeContainer">
         <h2>${title}</h2>
-        <span>Log in to like</span>
         <button id="likeBtn">Like</button>
-        <div id="likeCounter">1</div>
+        <div id="likeCounter"></div>
             <iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         </div>
     </div>`;
@@ -76,7 +75,6 @@ function displayEmbedUrl(image) {
     displayLikes(image, likeCounter);
   });
 
-  // to-do:  onclick function for like button: onClick="addLikeToDb();"
   mobileCategoryBtns.style.display = 'none';
   stickerCarousel.style.display = 'none';
   gifFrame.style.display = 'none';
@@ -85,12 +83,12 @@ function displayEmbedUrl(image) {
 async function likeGif(image) {
   let embed_url = image.getAttribute('embed_url');
   let title = image.getAttribute('title');
-  const docRef = dataBase.collection('Gifs').doc(title);
+  let id = image.getAttribute('id');
+  const docRef = dataBase.collection('Gifs').doc(id);
   const doc = await docRef.get();
-  console.log(doc);
 
   if (doc.exists) {
-    console.log('Document exists: Added Like');
+    console.log('Added Like');
     docRef.update({
       likes: firebase.firestore.FieldValue.increment(1)
     });
@@ -101,28 +99,25 @@ async function likeGif(image) {
     // if document doesn't exist (set)
     dataBase
       .collection('Gifs')
-      .doc(title)
-      .set({ title: title, embed_url: embed_url, likes: likes })
+      .doc(id)
+      .set({ id: id, title: title, embed_url: embed_url, likes: likes })
       .then(() => {
-        console.log(`Document was successfully written with ID: ${title}`);
+        console.log(`Document was successfully written with ID: ${id}`);
       });
   }
 }
 
 async function displayLikes(image, element) {
-  let embed_url = image.getAttribute('embed_url');
-  let title = image.getAttribute('title');
-  const docRef = dataBase.collection('Gifs').doc(title);
+  let id = image.getAttribute('id');
+  const docRef = dataBase.collection('Gifs').doc(id);
   const doc = await docRef.get();
-  console.log(doc);
 
   if (doc.exists) {
     docRef.onSnapshot((doc) => {
       element.innerHTML = doc.data().likes;
+      console.log(`Like Count is: ${doc.data().likes}`);
     });
-    console.log(`Document exists. Like Count is: ${doc.data().likes}`);
   } else {
-    console.log('Document does not exist: Like Count is 0');
     element.innerHTML = 0;
   }
 }

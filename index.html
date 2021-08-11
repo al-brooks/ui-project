@@ -15,7 +15,6 @@
     <!-- Firebase JS -->
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
     <!-- Might need to add additional firebase library for user authentication -->
     <title>Gif Finder</title>
   </head>
@@ -34,16 +33,6 @@
           />
           <button id="searchButton">Search</button>
         </form>
-        <!-- User Authentication for Firebase -->
-        <section id="logInOptions">
-          <span id="userEmail"></span>
-          <input type="email" name="" id="email" placeholder="email" />
-          <input type="password" name="" id="password" placeholder="password" />
-          <button id="signUp">Sign Up</button>
-          <button id="signIn">Sign In</button>
-          <button type="button" id="userAccount">Account</button>
-          <button id="signOut" type="button">Logout</button>
-        </section>
       </nav>
     </header>
 
@@ -91,7 +80,6 @@
       firebase.initializeApp(firebaseConfig);
       const dataBase = firebase.firestore();
       dataBase.settings({ timestampsInSnapshots: true });
-      const auth = firebase.auth();
     </script>
     <!-- bootstrap script -->
     <script
@@ -100,7 +88,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- JavaScript -->
-    <script src="js/user-auth.js"></script>
     <script src="js/giphy-api.js"></script>
     <script src="js/button-functions.js"></script>
   </body>
