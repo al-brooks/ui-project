@@ -33,8 +33,10 @@ async function fetchGifData(GIF_URL) {
 function resetAttributes() {
     gifFrame.removeAttribute('style');
     stickerCarousel.removeAttribute('style');
-    mobileCategoryBtns.removeAttribute('style');
     embedUrlDisplay.style.display = 'none';
+    stickerButton.removeAttribute('style');
+    allButton.removeAttribute('style');
+    gifButton.removeAttribute('style');
 }
 
 function hover(image) {
@@ -48,29 +50,33 @@ function unhover(image) {
 }
 
 function displayEmbedUrl(image) {
+    // Alters display of other Main Content so Embed URL is sole content on page
+    stickerCarousel.style.display = 'none';
+    gifFrame.style.display = 'none';
+    stickerButton.style.display = 'none';
+    allButton.style.display = 'none';
+    gifButton.style.display = 'none';
+
     if (embedUrlDisplay.style.display === 'none') {
         embedUrlDisplay.removeAttribute('style');
     }
     let embed_url = image.getAttribute('embed_url');
     let title = image.getAttribute('title');
     embedUrlDisplay.innerHTML = `
-    <div id="parentDiv">
         <header id="header">
             <button id="backButton" onClick="window.location.reload();">Back</button>
         </header>
         
         <div id="iframeContainer">
-        <h2>${title}</h2>
-        <button id="likeBtn">Like</button>
-        <div id="likeCounter"></div>
-            <iframe src="${embed_url}" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-        </div>
-    </div>`;
+            <section id="embedHeader">
+                <h2>${title}</h2>
+                <button id="likeBtn"></button>
+                <div id="likeCounter"></div>
+            </section>
+            <iframe src="${embed_url}" width="650em" height="450em" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        </div>`;
 
-    // Alters display of other Main Content so Embed URL is sole content on page
-    mobileCategoryBtns.style.display = 'none';
-    stickerCarousel.style.display = 'none';
-    gifFrame.style.display = 'none';
+
 
     // Like Button Functionality for Embed URL
     let likeCounter = document.querySelector('#likeCounter');
@@ -132,10 +138,10 @@ const wordTextBox = document.getElementById('wordTextBox');
 const gifFrame = document.getElementById('gifFrame');
 const stickerCarousel = document.getElementById('stickerCarousel');
 const mobileCategoryBtns = document.getElementById('mobileCategoryBtns');
-const gifButton = document.getElementById('gifButton');
-const stickerButton = document.getElementById('stickerButton');
-const allButton = document.getElementById('allButton');
 const sideBtns = document.getElementsByClassName('sideBtns');
+const allButton = document.getElementById('allButton');
+const stickerButton = document.getElementById('stickerButton');
+const gifButton = document.getElementById('gifButton');
 
 const limitDisplaySticker = 10;
 const limitDisplay = 12;

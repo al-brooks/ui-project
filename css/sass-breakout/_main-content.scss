@@ -34,14 +34,25 @@
             border-radius: 5px;
         }
     }
-    #parentDiv {
+    #embedUrlDisplay {
         @include flexBox(column, center, center);
         #header {
             @include flexBox(row, center, center);
+            margin-top: 35px;
         }
         #iframeContainer {
-            margin-top: 40px;
-            margin-right: 60%;
+            @include flexBox(column, center, center);
+            #embedHeader {
+                @include flexBox(row, center, center);
+                margin-top: 25px;
+                margin-bottom: 550px;
+                #likeBtn {
+                    background-image: url('images/thumbs-up.svg');
+                }
+                h2 {
+                    margin-right: 30px;
+                }
+            }
         }
     }
 }
