@@ -29,6 +29,7 @@ async function fetchGifData(GIF_URL) {
   }
 }
 
+// Resets HTML display for main content when user leave embed URL
 function resetAttributes() {
   gifFrame.removeAttribute('style');
   stickerCarousel.removeAttribute('style');
@@ -66,6 +67,7 @@ function displayEmbedUrl(image) {
         </div>
     </div>`;
 
+  // Like Button Functionality for Embed URL
   let likeCounter = document.querySelector('#likeCounter');
   displayLikes(image, likeCounter);
   const likeBtn = document.querySelector('#likeBtn');
@@ -75,6 +77,7 @@ function displayEmbedUrl(image) {
     displayLikes(image, likeCounter);
   });
 
+  // Alters display of other Main Content so Embed URL is sole content on page
   mobileCategoryBtns.style.display = 'none';
   stickerCarousel.style.display = 'none';
   gifFrame.style.display = 'none';
