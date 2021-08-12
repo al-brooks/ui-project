@@ -1,15 +1,10 @@
 @import "./mixins";
-// mobile layout
 header {
     height: 20%;
     width: 100%;
+    padding-bottom: 5px;
     nav {
         @include flexBox(row, space-around, center);
-        padding: 10px 0;
-        #logoImage {
-            width: 5vh;
-            border-radius: 5px;
-        }
         form {
             button {
                 border: none;
@@ -21,18 +16,13 @@ header {
                 border-style: none;
                 background-color: $primaryDarkBlue;
                 margin-right: 1vh;
-                margin-left: 10vh;
                 border-radius: 16px;
-                width: 80vw;
-                height: 2.3em;
+                width: 75vw;
+                height: 2.5em;
                 color: $primaryText
             }
         }
     }
-}
-
-#description {
-    text-align: center;
 }
 
 #searchButton {
@@ -44,7 +34,3 @@ header {
 .bi bi-search {
     background-size: 1rem 1rem;
 }
-
-// tablet layout
-// @media (min-width: 668px) {
-// }

@@ -1,7 +1,8 @@
 body {
-  margin: 0px;
+  margin: 3% 5%;
   background-color: #006494;
   color: #fff;
+  font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,17 +12,13 @@ body {
 header {
   height: 20%;
   width: 100%;
+  padding-bottom: 5px;
 }
 header nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  padding: 10px 0;
-}
-header nav #logoImage {
-  width: 5vh;
-  border-radius: 5px;
 }
 header nav form button {
   border: none;
@@ -33,15 +30,10 @@ header nav form input {
   border-style: none;
   background-color: #00304d;
   margin-right: 1vh;
-  margin-left: 10vh;
   border-radius: 16px;
-  width: 80vw;
-  height: 2.3em;
+  width: 75vw;
+  height: 2.5em;
   color: #fff;
-}
-
-#description {
-  text-align: center;
 }
 
 #searchButton {
@@ -58,11 +50,8 @@ header nav form input {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
+  align-items: normal;
   background-color: #006494;
-  border-radius: 13px;
 }
 
 .btn-info {
@@ -77,58 +66,68 @@ header nav form input {
     border: 15px solid #006494;
   }
 }
-#mainContent {
-  height: 100%;
-  width: 100%;
-  background-color: #00304d;
+@media (min-width: 481px) {
+  #mainContent {
+    height: 100%;
+    width: 100%;
+    background-color: #00304d;
+    border: 1px solid #006494;
+    border-radius: 15px;
+  }
+  #mainContent #mobileCategoryBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+  }
+  #mainContent #mobileCategoryBtns button {
+    font-size: 20px;
+  }
+  #mainContent #stickerCarousel {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 50px 20px;
+  }
+  #mainContent #stickerCarousel img {
+    width: 250px;
+    height: 200px;
+  }
+  #mainContent #gifFrame {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #mainContent #gifFrame img {
+    width: 400px;
+    height: 300px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  #mainContent #parentDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainContent #parentDiv #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  #mainContent #parentDiv #iframeContainer {
+    margin-top: 40px;
+    margin-right: 60%;
+  }
 }
-#mainContent #mobileCategoryBtns {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 14px;
-  margin-top: 10px;
-}
-#mainContent #gifFrame {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 260em;
-  background: linear-gradient(180deg, #00304d, #006494);
-}
-#mainContent #gifFrame img {
-  margin: 10px 0px 10px;
-}
-#mainContent #gifFrame #gifFrame {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 260em;
-  background: linear-gradient(180deg, #00304d, #006494);
-}
-#mainContent #gifFrame #gifFrame img {
-  margin: 10px 0px 10px;
-}
-#mainContent #gifFrame #parentDiv {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#mainContent #gifFrame #parentDiv #header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-#mainContent #gifFrame #parentDiv #iframeContainer {
-  margin-top: 40px;
-  margin-right: 60%;
-}
-
 #sideTab {
   display: none;
 }
@@ -136,29 +135,39 @@ header nav form input {
 @media (min-width: 768px) {
   #sideTab {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 25%;
     height: 100%;
     background: #00304d;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    border: 1px solid #006494;
+    border-radius: 15px;
   }
-  #sideTab h2 {
-    margin: 50px 20px;
+  #sideTab #logoImage {
+    width: 5vw;
+    border-radius: 10px;
+    margin: 20px 0 10px 0;
+  }
+  #sideTab h1 {
+    margin: 0 20px 40px 20px;
     color: #52c1e6;
   }
-  #sideTab h2 span {
-    color: white;
+  #sideTab h1 span {
+    color: #df3ca0;
   }
   #sideTab p {
     margin-left: 20px;
     margin-right: 20px;
+    font-size: medium;
     margin-bottom: 100px;
+    text-align: center;
   }
   #sideTab ul {
     list-style: none;
     margin-right: 5px;
     padding-top: 25px;
+    margin-bottom: 350px;
   }
   #sideTab ul li {
     text-align: center;
@@ -174,115 +183,6 @@ header nav form input {
   #sideTab ul li a {
     color: #fff;
     text-decoration: none;
-  }
-}
-@media (min-width: 668px) {
-  #mainContent {
-    height: 100%;
-    width: 100%;
-  }
-  #mainContent #mobileCategoryBtns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-bottom: 14px;
-    margin-top: 10px;
-  }
-  #mainContent #stickerCarousel {
-    height: 20%;
-    margin-bottom: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  #mainContent #stickerCarousel img {
-    height: 56px;
-    width: 82px;
-  }
-  #mainContent #gifFrame {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 260em;
-    background: linear-gradient(180deg, #00304d, #006494);
-  }
-  #mainContent #gifFrame img {
-    margin: 10px 0px 10px;
-    width: 500px;
-  }
-  #mainContent #parentDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #mainContent #parentDiv #header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  #mainContent #parentDiv #iframeContainer {
-    margin-top: 40px;
-    margin-right: 60%;
-  }
-}
-@media (min-width: 992px) {
-  #mainContent {
-    height: 100%;
-    width: 100%;
-  }
-  #mainContent #mobileCategoryBtns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 15px 0;
-  }
-  #mainContent #stickerCarousel {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 50px 20px;
-  }
-  #mainContent #stickerCarousel img {
-    width: 180px;
-    height: 150px;
-  }
-  #mainContent #gifFrame {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    background: linear-gradient(180deg, #00304d, #006494);
-  }
-  #mainContent #gifFrame img {
-    width: 480px;
-    height: 300px;
-    margin: 10px 0;
-  }
-  #mainContent #parentDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #mainContent #parentDiv #header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  #mainContent #parentDiv #iframeContainer {
-    margin-top: 40px;
-    margin-right: 60%;
   }
 }
 

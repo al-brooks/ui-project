@@ -9,8 +9,3 @@
     justify-content: $justify;
     align-items: $align;
 }
-
-@mixin grid($col) {
-    display: grid;
-    grid-template-columns: $col;
-}
