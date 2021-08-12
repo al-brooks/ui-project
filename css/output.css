@@ -20,6 +20,12 @@ header nav {
   justify-content: space-around;
   align-items: center;
 }
+header nav #logo {
+  background: center url("sass-breakout/images/logo.png") no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+}
 header nav form button {
   border: none;
   margin-top: 2px;
@@ -31,7 +37,7 @@ header nav form input {
   background-color: #00304d;
   margin-right: 1vh;
   border-radius: 16px;
-  width: 75vw;
+  width: 60vw;
   height: 2.5em;
   color: #fff;
 }
@@ -46,6 +52,11 @@ header nav form input {
   background-size: 1rem 1rem;
 }
 
+@media (min-width: 768px) {
+  #logo {
+    display: none;
+  }
+}
 #container {
   display: flex;
   flex-direction: row;
@@ -125,6 +136,12 @@ header nav form input {
 #mainContent #parentDiv #iframeContainer {
   margin-top: 40px;
   margin-right: 60%;
+}
+#mainContent #parentDiv #iframeContainer #likeBtn {
+  background: center url("sass-breakout/images/thumbs-up.svg") no-repeat;
+  background-color: white;
+  width: 30px;
+  height: 30px;
 }
 
 #sideTab {

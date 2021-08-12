@@ -1,36 +1,54 @@
-@import "./mixins";
+@import './mixins';
 header {
-    height: 20%;
-    width: 100%;
-    padding-bottom: 5px;
-    nav {
-        @include flexBox(row, space-around, center);
-        form {
-            button {
-                border: none;
-                margin-top: 2px;
-                height: 34px;
-            }
-            input {
-                text-align: center;
-                border-style: none;
-                background-color: $primaryDarkBlue;
-                margin-right: 1vh;
-                border-radius: 16px;
-                width: 75vw;
-                height: 2.5em;
-                color: $primaryText
-            }
-        }
+  height: 20%;
+  width: 100%;
+  padding-bottom: 5px;
+  nav {
+    @include flexBox(row, space-around, center);
+    // note:  Alexander Update start-block |
+    #logo {
+      background: center url('sass-breakout/images/logo.png') no-repeat;
+      background-size: contain;
+      width: 50px;
+      height: 50px;
     }
+    // end-block |
+    form {
+      button {
+        border: none;
+        margin-top: 2px;
+        height: 34px;
+      }
+      input {
+        text-align: center;
+        border-style: none;
+        background-color: $primaryDarkBlue;
+        margin-right: 1vh;
+        border-radius: 16px;
+        // Alexander update
+        // start-block |
+        width: 60vw;
+        // end-block |
+        height: 2.5em;
+        color: $primaryText;
+      }
+    }
+  }
 }
 
 #searchButton {
-    background-color: $primaryBackground;
-    border-color: $primaryBackground;
-    margin-bottom: 13px;
+  background-color: $primaryBackground;
+  border-color: $primaryBackground;
+  margin-bottom: 13px;
 }
 
 .bi bi-search {
-    background-size: 1rem 1rem;
+  background-size: 1rem 1rem;
+}
+
+// note:  Alexander update
+@media (min-width: 768px) {
+  #logo {
+    display: none;
+  }
 }

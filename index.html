@@ -12,79 +12,196 @@
     />
     <!-- Sass - css output -->
     <link rel="stylesheet" href="css/output.css" />
-     <!-- Firebase JS -->
-     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+    <!-- Firebase JS -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
     <!-- Google font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito"
+    />
     <title>GIFactory</title>
-</head>
+  </head>
 
   <body>
     <header>
-        <!-- Display Textbox for keyword / Button for search -->
-        <nav>
-            <form id="textButtonForm">
-                <input id="wordTextBox" type="textbox" placeholder="Enter keyword" required />
-                <button id="searchButton" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                  </svg></button>
-            </form>
-        </nav>
+      <!-- Display Textbox for keyword / Button for search -->
+      <nav>
+        <!-- note:  Alexander Update -->
+        <div id="logo"></div>
+        <!-- end-block  -->
+        <form id="textButtonForm">
+          <input
+            id="wordTextBox"
+            type="textbox"
+            placeholder="Enter keyword"
+            required
+          />
+          <button id="searchButton" class="btn btn-info">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </button>
+        </form>
+      </nav>
     </header>
 
     <main id="container">
-        <!-- Display logo / name / description / side tabs  -->
-        <section id="sideTab">
-            <img id="logoImage" src="./css/sass-breakout/images/logo.png" />
-            <h1><span>GIF</span>actory</h1>
-            <p id="description">The simplest way to explore and share free animated Gifs and Stickers across all of your favorite social medias!</p>
-            <div class="btn-group" role="group" aria-label="Basic outlined example" id="mobileCategoryBtns"></div>
-            <ul id="sideTabUL">
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Trending</button></li>
-                <li><button class="sideBtns btn btn-info" id="happyBtn">Happy</button></li>
-                <li><button class="sideBtns btn btn-info" id="funnyBtn">Funny</button></li>
-                <li><button class="sideBtns btn btn-info" id="AyeeeBtn">Ayeee</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Action</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Animals</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Anime</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Art & Desighn</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Cartoons</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Celebrities</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Food and Drinks</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Gaming</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Greetings</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Holidays</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Memes</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Movies</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Music</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Nature</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">News & Politics</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Reactions</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Science</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Sports</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">TV</button></li>
-                <li><button class="sideBtns btn btn-info" id="trendingBtn">Wierd</button></li>
-            </ul>
-        </section>
+      <!-- Display logo / name / description / side tabs  -->
+      <section id="sideTab">
+        <img id="logoImage" src="./css/sass-breakout/images/logo.png" />
+        <h1><span>GIF</span>actory</h1>
+        <p id="description">
+          The simplest way to explore and share free animated Gifs and Stickers
+          across all of your favorite social medias!
+        </p>
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic outlined example"
+          id="mobileCategoryBtns"
+        ></div>
+        <ul id="sideTabUL">
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Trending
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="happyBtn">Happy</button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="funnyBtn">Funny</button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="AyeeeBtn">Ayeee</button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Action
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Animals
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Anime
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Art & Desighn
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Cartoons
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Celebrities
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Food and Drinks
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Gaming
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Greetings
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Holidays
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Memes
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Movies
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Music
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Nature
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              News & Politics
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Reactions
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Science
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Sports
+            </button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">TV</button>
+          </li>
+          <li>
+            <button class="sideBtns btn btn-info" id="trendingBtn">
+              Wierd
+            </button>
+          </li>
+        </ul>
+      </section>
 
-        <!-- Display Stickers / Gifs -->
-        <section id="mainContent">
-            <div id="embedUrlDisplay">
-
-            </div>
-            <div class="btn-group" role="group" aria-label="Basic outlined example" id="mobileCategoryBtns">
-                <button class="btn btn-info" id="allButton">All</button>
-                <button class="btn btn-info" id="stickerButton">Sticker</button>
-                <button class="btn btn-info" id="gifButton">Gif</button>
-            </div>
-            <div id="stickerCarousel">
-                Sticker Carousel Here
-            </div>
-            <div id="gifFrame">
-                Main Gifs Here
-            </div>
-        </section>
+      <!-- Display Stickers / Gifs -->
+      <section id="mainContent">
+        <div id="embedUrlDisplay"></div>
+        <div
+          class="btn-group"
+          role="group"
+          aria-label="Basic outlined example"
+          id="mobileCategoryBtns"
+        >
+          <button class="btn btn-info" id="allButton">All</button>
+          <button class="btn btn-info" id="stickerButton">Sticker</button>
+          <button class="btn btn-info" id="gifButton">Gif</button>
+        </div>
+        <div id="stickerCarousel">Sticker Carousel Here</div>
+        <div id="gifFrame">Main Gifs Here</div>
+      </section>
     </main>
 
     <!-- Firebase JS Script -->
