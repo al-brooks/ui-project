@@ -80,9 +80,10 @@ const stickerButton = document.getElementById("stickerButton")
 const allButton = document.getElementById("allButton")
 const sideBtns = document.getElementsByClassName("sideBtns")
 
-const limitDisplay = 10
+const limitDisplaySticker = 10
+const limitDisplay = 12
 
-const STICK_INIT_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplay}&offset=0&rating=g&lang=en`
+const STICK_INIT_URL = `https://api.giphy.com/v1/stickers/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplaySticker}&offset=0&rating=g&lang=en`
 const GIF_INIT_URL = `https://api.giphy.com/v1/gifs/search?api_key=ETsIe95S9ra8O2xYkHRPGcwr1X49fBN4&q=$welcome&limit=${limitDisplay}&offset=0&rating=g&lang=en`
 
 
@@ -132,4 +133,8 @@ textboxButtonForm.addEventListener("submit", function(e) {
     resetAttributes()
     fetchStickerData(STICK_SEARCH_URL)
     fetchGifData(GIF_SEARCH_URL)
+
+    setTimeout(() => {
+        wordTextBox.value = ""
+    }, 2000)
 })
