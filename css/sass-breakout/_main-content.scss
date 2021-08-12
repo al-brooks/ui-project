@@ -1,42 +1,49 @@
-@import './mixins';
-// mobile layout
-#mainContent {
-    height: 100%;
-    width: 100%;
-    @include testBorder(white);
-    #mobileCategoryBtns {
-        @include testBorder(red);
-        @include flexBox(row, space-evenly, center);
-        margin-bottom: 10px;
-    }
-    #stickerCarousel {
-        @include testBorder(yellow);
-        height: 20%;
-        margin-bottom: 10px;
-        img {
-            height: 70px;
+@import "./mixins";
+@import "./variables";
+@media (min-width: 481px) {
+    #mainContent {
+        height: 100%;
+        width: 100%;
+        background-color: $primaryDarkBlue;
+        border: 1px solid $primaryBackground;
+        border-radius: 15px;
+        #mobileCategoryBtns {
+            @include flexBox(row, space-evenly, center);
+            margin: 20px 0;
+            button {
+                font-size: 20px;
+            }
         }
-    }
-    #gifFrame {
-        @include testBorder(green);
-        @include flexBox(column, flex-start, center);
-        height: 80%;
-        img {
-            margin: 10px 0px 10px;
+        #stickerCarousel {
+            height: auto;
+            @include flexBox(row, space-evenly, center);
+            flex-wrap: wrap;
+            margin: 50px 20px;
+            img {
+                width: 250px;
+                height: 200px;
+            }
         }
-    }
-    #parentDiv {
-        @include flexBox(column, center, center);
-        #header {
-            @include flexBox(row, center, center)
+        #gifFrame {
+            height: auto;
+            @include flexBox(row, space-evenly, center);
+            flex-wrap: wrap;
+            img {
+                width: 400px;
+                height: 300px;
+                margin: 10px 0;
+                border-radius: 5px;
+            }
         }
-        #iframeContainer {
-            margin-top: 40px;
-            margin-right: 60%;
+        #parentDiv {
+            @include flexBox(column, center, center);
+            #header {
+                @include flexBox(row, center, center);
+            }
+            #iframeContainer {
+                margin-top: 40px;
+                margin-right: 60%;
+            }
         }
     }
 }
-
-// tablet layout
-// @media (min-width: 668px) {
-// }

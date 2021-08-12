@@ -1,13 +1,20 @@
 @import './mixins';
-
 // mobile layout
 #container {
-  @include flexBox(row, center, center);
-  height: 100vh;
-  width: 100%;
-  @include testBorder(purple);
+    @include flexBox(row, center, normal);
+    background-color: $primaryBackground;
+}
+
+.btn-info {
+    color: #000;
+    background-color: $primaryDarkBlue;
+    border-color: $primaryDarkBlue;
+    color: $primaryText;
 }
 
 // tablet layout
-// @media (min-width: 668px) {
-// }
+@media (min-width: 768px) {
+    body {
+        border: 15px solid $primaryBackground;
+    }
+}
