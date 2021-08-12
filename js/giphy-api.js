@@ -67,6 +67,11 @@ function displayEmbedUrl(image) {
         </div>
     </div>`;
 
+  // Alters display of other Main Content so Embed URL is sole content on page
+  mobileCategoryBtns.style.display = 'none';
+  stickerCarousel.style.display = 'none';
+  gifFrame.style.display = 'none';
+
   // Like Button Functionality for Embed URL
   let likeCounter = document.querySelector('#likeCounter');
   displayLikes(image, likeCounter);
@@ -76,11 +81,6 @@ function displayEmbedUrl(image) {
     likeGif(image);
     displayLikes(image, likeCounter);
   });
-
-  // Alters display of other Main Content so Embed URL is sole content on page
-  mobileCategoryBtns.style.display = 'none';
-  stickerCarousel.style.display = 'none';
-  gifFrame.style.display = 'none';
 }
 
 async function likeGif(image) {
