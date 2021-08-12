@@ -66,7 +66,7 @@ function displayEmbedUrl(image) {
             <button id="likeBtn"></button>
             <div id="likeCounter"></div>
           </section>
-          <iframe id="giphyContent" src="${embed_url}" width="60%" height="60%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+          <iframe id="giphyContent" src="${embed_url}" width="50%" height="60%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         </div>`;
 
     // Alters display of other Main Content so Embed URL is sole content on page

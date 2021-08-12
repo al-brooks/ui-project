@@ -1,16 +1,21 @@
 @import './mixins';
 @import './variables';
 #mainContent {
+    // original values 100% each
     height: 100%;
-    width: 100%;
+    width: 100vw;
+    // added mixin
+    @include flexBox(column, center, center);
     background-color: $primaryDarkBlue;
     border: 1px solid $primaryBackground;
     border-radius: 15px;
     #mobileCategoryBtns {
-        @include flexBox(row, space-evenly, center);
+        @include flexBox(row, space-between, center);
         margin: 20px 0;
+        width: 60%;
         button {
-            font-size: 20px;
+            font-size: 1.5em;
+            font-weight: 800;
         }
     }
     #stickerCarousel {
@@ -35,22 +40,39 @@
         }
     }
     #embedUrlDisplay {
+        margin-top: 100px;
         @include flexBox(column, center, center);
         #header {
             @include flexBox(row, center, center);
             margin-top: 35px;
+            #backButton {
+                background-color: $primaryBackground;
+                color: $primaryText;
+                border: none;
+                border-radius: 10px;
+                font-size: 1.2em;
+                width: 80px;
+            }
         }
         #iframeContainer {
             @include flexBox(column, center, center);
             #embedHeader {
-                @include flexBox(row, center, center);
+                @include flexBox(row, center, flex-start);
                 margin-top: 25px;
                 margin-bottom: 550px;
+                padding: 0px 30px;
                 #likeBtn {
-                    background: center url('sass-breakout/images/thumbs-up.svg') no-repeat;
-                    background-color: white;
-                    width: 30px;
-                    height: 30px;
+                    background: center url('sass-breakout/images/thumbs-up.png') no-repeat;
+                    background-size: contain;
+                    border: none;
+                    border-radius: 5px;
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 10px;
+                }
+                #likeCounter {
+                    font-size: 1em;
+                    font-weight: bolder;
                 }
                 h2 {
                     margin-right: 30px;
@@ -60,29 +82,17 @@
     }
 }
 
-// @media (min-width: 740px) {
-//     #embedHeader {
-//         margin-bottom: 550px;
-//     }
-// #iframeContainer {
-//     @include flexBox(column,
-//     center,
-//     center);
-//     #embedHeader {
-//         @include flexBox(row,
-//         center,
-//         center);
-//         margin-top: 25px;
-//         margin-bottom: 550px;
-//         #likeBtn {
-//             background: center url('sass-breakout/images/thumbs-up.svg') no-repeat;
-//             background-color: white;
-//             width: 30px;
-//             height: 30px;
-//         }
-//         h2 {
-//             margin-right: 30px;
-//         }
-//     }
-// }
-// }
+// testing media query for tablet + for embed url
+@media (min-width: 768px) {
+    #mainContent {
+        width: 100%;
+        #embedUrlDisplay {
+            margin-top: 0px;
+            #iframeContainer {
+                #embedHeader {
+                    margin-bottom: 750px;
+                }
+            }
+        }
+    }
+}
