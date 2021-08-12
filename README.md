@@ -53,7 +53,7 @@ This example shows how our you can filter images with the sidebar categories and
 https://user-images.githubusercontent.com/80641831/129267718-970349f0-1668-40d6-ae75-9b7e5c57f386.mov
 
 
-This example shows how you can filter what kind of content you wish to display wheter it be gifs, stcikers or both. 
+This example shows how you can filter what kind of content you wish to display wether it be gifs, stcikers or both. 
 
 https://user-images.githubusercontent.com/80641831/129267207-ccfd5ad9-8793-4108-8d90-725fc3e410a7.mov
 
