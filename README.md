@@ -28,7 +28,7 @@ __________________________________________________
 
  **Back-End**
 
-  * Javascript
+  * JavaScript
  
 **Data-base**
   * FireBase
