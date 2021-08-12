@@ -121,27 +121,41 @@ header nav form input {
   margin: 10px 0;
   border-radius: 5px;
 }
-#mainContent #parentDiv {
+#mainContent #embedUrlDisplay {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-#mainContent #parentDiv #header {
+#mainContent #embedUrlDisplay #header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 35px;
 }
-#mainContent #parentDiv #iframeContainer {
-  margin-top: 40px;
-  margin-right: 60%;
+#mainContent #embedUrlDisplay #iframeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#mainContent #parentDiv #iframeContainer #likeBtn {
+#mainContent #embedUrlDisplay #iframeContainer #embedHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 550px;
+}
+#mainContent #embedUrlDisplay #iframeContainer #embedHeader #likeBtn {
   background: center url("sass-breakout/images/thumbs-up.svg") no-repeat;
   background-color: white;
   width: 30px;
   height: 30px;
+}
+#mainContent #embedUrlDisplay #iframeContainer #embedHeader h2 {
+  margin-right: 30px;
 }
 
 #sideTab {

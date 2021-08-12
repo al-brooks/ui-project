@@ -1,53 +1,88 @@
 @import './mixins';
 @import './variables';
 #mainContent {
-  height: 100%;
-  width: 100%;
-  background-color: $primaryDarkBlue;
-  border: 1px solid $primaryBackground;
-  border-radius: 15px;
-  #mobileCategoryBtns {
-    @include flexBox(row, space-evenly, center);
-    margin: 20px 0;
-    button {
-      font-size: 20px;
+    height: 100%;
+    width: 100%;
+    background-color: $primaryDarkBlue;
+    border: 1px solid $primaryBackground;
+    border-radius: 15px;
+    #mobileCategoryBtns {
+        @include flexBox(row, space-evenly, center);
+        margin: 20px 0;
+        button {
+            font-size: 20px;
+        }
     }
-  }
-  #stickerCarousel {
-    height: auto;
-    @include flexBox(row, space-evenly, center);
-    flex-wrap: wrap;
-    margin: 50px 20px;
-    img {
-      width: 250px;
-      height: 200px;
+    #stickerCarousel {
+        height: auto;
+        @include flexBox(row, space-evenly, center);
+        flex-wrap: wrap;
+        margin: 50px 20px;
+        img {
+            width: 250px;
+            height: 200px;
+        }
     }
-  }
-  #gifFrame {
-    height: auto;
-    @include flexBox(row, space-evenly, center);
-    flex-wrap: wrap;
-    img {
-      width: 400px;
-      height: 300px;
-      margin: 10px 0;
-      border-radius: 5px;
+    #gifFrame {
+        height: auto;
+        @include flexBox(row, space-evenly, center);
+        flex-wrap: wrap;
+        img {
+            width: 400px;
+            height: 300px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
     }
-  }
-  #parentDiv {
-    @include flexBox(column, center, center);
-    #header {
-      @include flexBox(row, center, center);
+    #embedUrlDisplay {
+        @include flexBox(column, center, center);
+        #header {
+            @include flexBox(row, center, center);
+            margin-top: 35px;
+        }
+        #iframeContainer {
+            @include flexBox(column, center, center);
+            #embedHeader {
+                @include flexBox(row, center, center);
+                margin-top: 25px;
+                margin-bottom: 550px;
+                #likeBtn {
+                    background: center url('sass-breakout/images/thumbs-up.svg') no-repeat;
+                    background-color: white;
+                    width: 30px;
+                    height: 30px;
+                }
+                h2 {
+                    margin-right: 30px;
+                }
+            }
+        }
     }
-    #iframeContainer {
-      margin-top: 40px;
-      margin-right: 60%;
-      #likeBtn {
-        background: center url('sass-breakout/images/thumbs-up.svg') no-repeat;
-        background-color: white;
-        width: 30px;
-        height: 30px;
-      }
-    }
-  }
 }
+
+// @media (min-width: 740px) {
+//     #embedHeader {
+//         margin-bottom: 550px;
+//     }
+// #iframeContainer {
+//     @include flexBox(column,
+//     center,
+//     center);
+//     #embedHeader {
+//         @include flexBox(row,
+//         center,
+//         center);
+//         margin-top: 25px;
+//         margin-bottom: 550px;
+//         #likeBtn {
+//             background: center url('sass-breakout/images/thumbs-up.svg') no-repeat;
+//             background-color: white;
+//             width: 30px;
+//             height: 30px;
+//         }
+//         h2 {
+//             margin-right: 30px;
+//         }
+//     }
+// }
+// }
