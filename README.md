@@ -15,7 +15,7 @@ __________________________________________________
 
 ## Website description:
 
-Our group utilized JavaScrpit, to add multiple funtions to our giphy/stickers app to make it responsive. Css and scss were used for styling as well as to resize content to accomidate the appropriate screen sizes. Featured on the app, is gifs and stickers from a giphy.com api,and with the hovering social media display, you can share your favorite stickers and gifs with your family and friends. Thats not all for fuctionality, featured is a responsive like button which keeps track of the number of likes clicked, stored in our firebase data-base. Not only can you view, like and share gifs and stickers, but you can search with either the search bar or use the filtered key wordso the sidebar with a click of a button.   
+Our group utilized JavaScrpit, to add multiple funtions to our giphy/stickers app to make it responsive. Css and scss were used for styling as well as to resize content to accomidate the appropriate screen sizes. Featured on the app, is gifs and stickers from a giphy.com api,and with the hovering social media display, you can share your favorite stickers and gifs with your family and friends. Thats not all for fuctionality, featured is a responsive like button which keeps track of the number of likes clicked, stored in our firebase data-base. Not only can you view, like and share gifs and stickers, but you can search with either the search bar or use the filtered key words on the sidebar with a click of a button.   
 __________________________________________________
 
 ## Software languages used: ##
